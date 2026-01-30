@@ -8,11 +8,13 @@ import Achievements from "@/components/sections/achievements";
 import Team from "@/components/sections/team";
 import ContactSection from "@/components/sections/contact-section";
 import Footer from "@/components/shared/footer";
+import { Logos3 } from "@/components/sections/logos3";
 
 export default function Home() {
   return (
     <main className="w-full">
       <Hero />
+      <Logos3 />
       <WhyChoose />
       <Solutions />
       <AboutCompany />
