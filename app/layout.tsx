@@ -6,13 +6,15 @@ import "./globals.css";
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
 import SmoothScroll from "@/components/shared/smooth-scroll";
+import { ScrollToTop } from "@/components/shared/scroll-to-top";
 
 const _rubik = Rubik({ subsets: ["latin"] });
 const _notoSans = Noto_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Halcom - IT Infrastructure Specialist Solutions",
-  description: "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience serving enterprise clients since 2003.",
+  description:
+    "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience serving enterprise clients since 2003.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -45,6 +47,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SmoothScroll />
+        <ScrollToTop />
         <Footer />
       </body>
     </html>
