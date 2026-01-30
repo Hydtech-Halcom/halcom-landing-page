@@ -18,7 +18,7 @@ export default function Home() {
       <WhyChoose />
       <Solutions />
       <AboutCompany />
-      <Projects />
+      {/* <Projects /> */}
       <Achievements />
       <Team />
       <ContactSection />
