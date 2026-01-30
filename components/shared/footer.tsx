@@ -47,7 +47,7 @@ export default function Footer() {
               IT Infrastructure Specialist providing total solutions for businesses of all sizes.
             </p>
             {/* Social Links */}
-            <motion.div 
+            <motion.div
               className="flex gap-4 pt-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -151,7 +151,7 @@ export default function Footer() {
       {/* Scroll to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors shadow-lg hidden md:flex"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors shadow-lg md:flex"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, y: 20 }}
