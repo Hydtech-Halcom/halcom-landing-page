@@ -13,7 +13,6 @@ import { Logos3 } from "@/components/sections/logos3";
 export default function Home() {
   return (
     <main className="w-full">
-      <Header />
       <Hero />
       <Logos3 />
       <WhyChoose />
@@ -23,7 +22,6 @@ export default function Home() {
       <Achievements />
       <Team />
       <ContactSection />
-      <Footer />
     </main>
   );
 }
