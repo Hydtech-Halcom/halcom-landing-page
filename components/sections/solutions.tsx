@@ -8,7 +8,7 @@ const solutions: iCardItem[] = [
     title: "Infrastructure",
     description: "Custom IT infrastructure design tailored to your business needs and scalability requirements.",
     tag: "Design",
-    src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=2000&auto=format&fit=crop",
+    src: "/assets/why-choose/bank-backed.jpg",
     link: "#contact",
     color: "#020617", // Slate 950
     textColor: "#ffffff",
