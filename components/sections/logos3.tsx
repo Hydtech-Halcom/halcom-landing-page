@@ -121,10 +121,7 @@ const Logos3 = ({
     },
   ];
   return (
-    <section className="py-16">
-      {/* <div className="container flex flex-col items-center text-center">
-        <h1 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">{heading}</h1>
-      </div> */}
+    <section className="py-8">
       <div className="">
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
           <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true, speed: 0.7 })]}>
