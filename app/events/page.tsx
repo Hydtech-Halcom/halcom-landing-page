@@ -114,11 +114,6 @@ export default function EventsPage() {
                       </div>
                       <CardHeader className="pb-3">
                         <div className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <Badge variant="secondary" className="text-xs">
-                              {event.category}
-                            </Badge>
-                          </div>
                           <CardTitle className="text-lg line-clamp-2">{event.title}</CardTitle>
                           <p className="text-sm text-muted-foreground line-clamp-2">{event.shortDescription}</p>
                         </div>
