@@ -13,15 +13,13 @@ const _notoSans = Noto_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Halcom - IT Infrastructure Specialist Solutions",
-  description:
-    "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience serving enterprise clients since 2003.",
+  description: "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience serving enterprise clients since 2003.",
   generator: "v0.app",
   icons: {
     icon: [
-      // {
-      //   url: '/icon-light-32x32.png',
-      //   media: '(prefers-color-scheme: light)',
-      // },
+      {
+        url: "/assets/halcom.png",
+      },
       // {
       //   url: '/icon-dark-32x32.png',
       //   media: '(prefers-color-scheme: dark)',
