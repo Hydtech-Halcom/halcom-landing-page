@@ -9,15 +9,15 @@ import { NumberTicker } from "@/components/ui/number-ticker";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-dvh flex items-center overflow-hidden">
+    <section className="relative w-full min-h-dvh flex items-center overflow-hidden p-4 sm:p-10 lg:p-16 isolate">
       {/* Background Image with Blending Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 -z-10">
         <Image src="/assets/hero/bg-colorful.jpg" alt="IT Infrastructure Background" fill priority quality={90} className="object-cover" sizes="100vw" />
         {/* Gradient Overlay for blending - Heavy on left for text readability */}
         <div className="absolute inset-0 bg-linear-to-r from-background via-background/90 to-background/30" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div className="max-w-3xl" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           {/* Content */}
           <motion.div className="flex flex-col gap-6 sm:gap-8" variants={fadeInUp}>
