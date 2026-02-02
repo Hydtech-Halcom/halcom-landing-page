@@ -11,6 +11,7 @@ export default function Header() {
     { name: "Solutions", link: "/#solutions" },
     { name: "Partner", link: "/partner" },
     { name: "Teams", link: "/teams" },
+    { name: "Events", link: "/events" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
