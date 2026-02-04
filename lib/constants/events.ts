@@ -4,11 +4,11 @@ export type Event = {
   title: string;
   description: string;
   shortDescription: string;
-  date: string; // ISO format date
-  time: string; // e.g., "09:00 - 17:00 WIB"
+  date: string;
+  time: string;
   location: string;
   category: string;
-  image: string; // URL or path to the event image
+  image: string[]; // URL or path to the event image
   status: "upcoming" | "completed";
   featured: boolean;
 };
@@ -25,7 +25,22 @@ export const events: Event[] = [
     time: "09:00 - 17:00 WIB",
     location: "Harris Hotel Batam",
     category: "Forum & Business Matching",
-    image: "/assets/events/ifpi-forum-2025.jpg",
+    image: [
+      "/assets/events/411A1201.jpg",
+      "/assets/events/411A0482.jpg",
+      "/assets/events/411A0655.jpg",
+      "/assets/events/411A0766.jpg",
+      "/assets/events/411A0886.jpg",
+      "/assets/events/411A1204.jpg",
+      "/assets/events/411A0889.jpg",
+      "/assets/events/411A0890.jpg",
+      "/assets/events/411A1141.jpg",
+      "/assets/events/411A1164.jpg",
+      "/assets/events/411A1171.jpg",
+      "/assets/events/411A1665.jpg",
+      "/assets/events/411A1732.jpg",
+      "/assets/events/411A1749.jpg",
+    ],
     status: "upcoming",
     featured: true,
   },
@@ -39,7 +54,7 @@ export const events: Event[] = [
     time: "10:00 - 15:00 WIB",
     location: "Hotel Santika Premiere Padang",
     category: "Seminar & Technology Showcase",
-    image: "/assets/events/epson-sumatera-barat-2025.jpg",
+    image: ["/assets/events/epson-sumatera-barat-2025.jpg"],
     status: "upcoming",
     featured: true,
   },
@@ -53,7 +68,7 @@ export const events: Event[] = [
     time: "13:00 - 16:00 WIB",
     location: "UNP Hotel & Convention Center",
     category: "Product Knowledge Session",
-    image: "/assets/events/smart-campus-2025.jpg",
+    image: ["/assets/events/smart-campus-2025.jpg"],
     status: "upcoming",
     featured: true,
   },
@@ -67,7 +82,7 @@ export const events: Event[] = [
     time: "09:00 - 17:00",
     location: "Jakarta Convention Center",
     category: "Conference",
-    image: "/assets/events/conference.jpg",
+    image: ["/assets/events/conference.jpg"],
     status: "completed",
     featured: false,
   },
@@ -81,7 +96,7 @@ export const events: Event[] = [
     time: "13:00 - 16:00",
     location: "Halcom Training Center",
     category: "Workshop",
-    image: "/assets/events/workshop.jpg",
+    image: ["/assets/events/workshop.jpg"],
     status: "completed",
     featured: false,
   },

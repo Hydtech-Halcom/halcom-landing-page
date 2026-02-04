@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { Calendar, MapPin, Clock, ArrowLeft } from "lucide-react";
+import { Calendar, MapPin, Clock, ArrowLeft, ChevronLeft } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { events } from "@/lib/constants/events";
+import { ThumbnailsCarousel } from "@/components/thumbnails-carousel";
 
 interface EventDetailPageProps {
   params: Promise<{
@@ -28,63 +32,90 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
     return date.toLocaleDateString("id-ID", options);
   };
 
+  // Siapkan data gambar untuk carousel
+  const carouselImages = event.image.map(imgPath => ({
+    full: imgPath,
+    thumb: imgPath,
+  }));
+
   return (
     <div className="min-h-screen">
-      {/* Event Header */}
-      <div className="relative h-64 sm:h-80 lg:h-96">
-        <Image src={event.image} alt={event.title} fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-          <div className="space-y-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">{event.title}</h1>
-            <p className="text-lg text-gray-800 max-w-3xl">{event.shortDescription}</p>
-          </div>
+      {/* Navigation */}
+      <div className="pt-15">
+        <div className="max-w-7xl mx-auto px-4">
+          <Link href="/events">
+            <Button variant="link" size="sm" className="gap-2">
+              <ChevronLeft className="me-1 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+              Go Back
+            </Button>
+          </Link>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Event Details */}
-          <div className="lg:col-span-2 space-y-8">
-            <section>
-              <h2 className="text-xl font-semibold mb-4">Deskripsi Acara</h2>
-              <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{event.description}</p>
-            </section>
+        {/* Grid layout hanya untuk konten utama */}
+        <div className="space-y-8">
+          {/* Event Header */}
+          <div className="space-y-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">{event.title}</h1>
+            <p className="text-xl text-muted-foreground">{event.shortDescription}</p>
           </div>
 
-          {/* Event Info Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="bg-card border rounded-lg p-6 space-y-6">
-              <div className="space-y-4">
-                <h3 className="font-semibold text-lg">Informasi Acara</h3>
+          {/* Image Gallery dengan Carousel */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold">Galeri Acara</h2>
+            <ThumbnailsCarousel images={carouselImages} />
+          </section>
 
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <Calendar className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <div>
-                      <p className="font-medium">Tanggal</p>
-                      <p className="text-muted-foreground">{formatDate(event.date)}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <div>
-                      <p className="font-medium">Waktu</p>
-                      <p className="text-muted-foreground">{event.time}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <div>
-                      <p className="font-medium">Lokasi</p>
-                      <p className="text-muted-foreground">{event.location}</p>
-                    </div>
-                  </div>
-                </div>
+          {/* Event Description dan Info dalam satu baris */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Deskripsi */}
+            <div className="lg:col-span-2 space-y-4">
+              <h2 className="text-2xl font-semibold">Deskripsi Lengkap</h2>
+              <div className="prose prose-lg max-w-none">
+                <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{event.description}</p>
               </div>
+            </div>
+
+            {/* Event Info - Di sebelah deskripsi */}
+            <div className="space-y-4">
+              <h2 className="text-2xl font-semibold">Detail Acara</h2>
+              <Card>
+                <CardContent className="p-6 space-y-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <Calendar className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium">Tanggal</p>
+                        <p className="text-muted-foreground">{formatDate(event.date)}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <Clock className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium">Waktu</p>
+                        <p className="text-muted-foreground">{event.time}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <MapPin className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium">Lokasi</p>
+                        <p className="text-muted-foreground">{event.location}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
