@@ -6,6 +6,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInUp, containerVariants, itemVariants } from "@/lib/animations";
 import { TextAnimate } from "../ui/text-animate";
+import { TextLoop } from "../ui/text-loop";
+import { FlowButton } from "../ui/flow-button";
 
 export default function AboutCompany() {
   const highlights = [
@@ -30,7 +32,7 @@ export default function AboutCompany() {
           {/* Content */}
           <motion.div className="space-y-8" variants={fadeInUp}>
             <motion.div variants={itemVariants}>
-              <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4">Our Company</p>
+              <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">Our Company</p>
               <TextAnimate animation="blurIn" as="h2" className="text-3xl sm:text-5xl font-bold text-foreground leading-tight">
                 Crafting Success Tailored Solutions
               </TextAnimate>
@@ -48,20 +50,20 @@ export default function AboutCompany() {
             </motion.div>
 
             {/* Highlights */}
-            <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4" variants={containerVariants}>
-              {highlights.map((highlight, index) => (
-                <motion.div key={index} className="flex items-start gap-3" variants={itemVariants} whileHover={{ x: 10 }}>
-                  <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
-                  <span className="text-foreground-secondary font-medium">{highlight}</span>
-                </motion.div>
-              ))}
-            </motion.div>
+            <div className="flex justify-start">
+              <TextLoop className="text-xl sm:text-2xl font-medium text-foreground-secondary leading-normal" interval={3}>
+                {highlights.map((highlight, index) => (
+                  <span key={index} className="flex items-center gap-3">
+                    <CheckCircle2 className="text-primary shrink-0" size={24} />
+                    {highlight}
+                  </span>
+                ))}
+              </TextLoop>
+            </div>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={itemVariants}>
-              <Link href="/about" className="inline-block px-8 py-4 bg-primary text-white rounded-sm font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 w-fit">
-                Read More About Us
-              </Link>
-            </motion.div>
+            <Link href="/about">
+              <FlowButton text="Read More About Us" />
+            </Link>
           </motion.div>
         </motion.div>
       </div>

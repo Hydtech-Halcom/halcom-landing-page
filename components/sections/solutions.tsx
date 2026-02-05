@@ -49,7 +49,7 @@ export default function Solutions() {
       <div className="pt-24 pb-12">
         {/* Section Header */}
         <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-          <TextAnimate animation="blurIn" as="p" className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 px-4">
+          <TextAnimate animation="blurIn" as="p" className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 px-4 inline-block py-1.5 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
             Our Solutions
           </TextAnimate>
           <TextAnimate animation="blurIn" as="h2" className="text-3xl sm:text-5xl font-bold text-foreground mb-4 px-4">
