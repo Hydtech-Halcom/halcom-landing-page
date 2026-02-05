@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CardsParallax, type iCardItem } from "@/components/ui/scroll-cards";
+import { TextAnimate } from "../ui/text-animate";
 
 const solutions: iCardItem[] = [
   {
@@ -48,9 +49,15 @@ export default function Solutions() {
       <div className="pt-24 pb-12">
         {/* Section Header */}
         <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 px-4">Our Solutions</p>
-          <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4 px-4">Transformative IT Solutions</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto px-4">Get our exclusive services designed to drive business growth and operational excellence</p>
+          <TextAnimate animation="blurIn" as="p" className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 px-4">
+            Our Solutions
+          </TextAnimate>
+          <TextAnimate animation="blurIn" as="h2" className="text-3xl sm:text-5xl font-bold text-foreground mb-4 px-4">
+            Transformative IT Solutions
+          </TextAnimate>
+          <TextAnimate animation="blurIn" as="p" className="text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+            Get our exclusive services designed to drive business growth and operational excellence
+          </TextAnimate>
         </motion.div>
 
         {/* Scroll Cards Parallax */}

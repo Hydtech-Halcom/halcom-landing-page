@@ -55,10 +55,10 @@ export default function WhyChoose() {
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
-              <motion.div key={index} variants={itemVariants} className="relative bg-white border border-border overflow-hidden group cursor-pointer h-75">
+              <motion.div key={index} variants={itemVariants} className="relative bg-white border border-border overflow-hidden group cursor-pointer h-75 rounded-xl">
                 {/* Konten Default (Saat tidak hover) */}
                 <div className="absolute inset-0 p-6 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0 z-10">
-                  <motion.div className="mb-4 flex items-center justify-center w-12 h-12 bg-primary/10 " whileHover={{ scale: 1.1, rotate: 10 }} whileTap={{ scale: 0.95 }}>
+                  <motion.div className="mb-4 flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl" whileHover={{ scale: 1.1, rotate: 10 }} whileTap={{ scale: 0.95 }}>
                     <Icon className="text-primary" />
                   </motion.div>
                   <h3 className="font-semibold text-lg text-foreground mb-2 text-center">{reason.title}</h3>
