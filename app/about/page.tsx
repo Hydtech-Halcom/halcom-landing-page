@@ -1,5 +1,17 @@
+import { Metadata } from "next";
 import { BussinessSection } from "@/components/sections/about/BussinessSection";
 import { PageHero } from "@/components/shared/PageHero";
+
+export const metadata: Metadata = {
+  title: "Tentang Kami",
+  description:
+    "Halcom adalah IT Infrastructure Specialist yang berkomitmen memberikan solusi total kepada klien dengan pengalaman 20+ tahun dan tim bersertifikasi ahli.",
+  openGraph: {
+    title: "Tentang Kami | Halcom",
+    description:
+      "Halcom adalah IT Infrastructure Specialist yang berkomitmen memberikan solusi total kepada klien dengan pengalaman 20+ tahun.",
+  },
+};
 
 export default function About() {
   return (
