@@ -1,5 +1,14 @@
 "use client";
-import { Navbar, NavBody, NavItems, MobileNav, NavbarButton, MobileNavHeader, MobileNavToggle, MobileNavMenu } from "@/components/ui/resizable-navbar";
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  NavbarButton,
+  MobileNavHeader,
+  MobileNavToggle,
+  MobileNavMenu,
+} from "@/components/ui/resizable-navbar";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,9 +24,9 @@ export default function Header() {
   // Data untuk item navbar
   const navItems = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/about" }, // Ini akan di-override untuk desktop
+    { name: "About", link: "/about" },
     { name: "Solutions", link: "/#solutions" },
-    { name: "Teams", link: "/teams" },
+    { name: "Projects", link: "/projects" },
     { name: "Events", link: "/events" },
   ];
 
@@ -26,12 +35,16 @@ export default function Header() {
     { name: "About Us", link: "/about" },
     { name: "Partners", link: "/partner" },
     { name: "Customers", link: "/customers" },
+    { name: "Teams", link: "/teams" },
   ];
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsAboutDropdownOpen(false);
       }
     };
@@ -62,13 +75,24 @@ export default function Header() {
                 }
               }}
             >
-              <button onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)} onMouseEnter={() => setHoveredIndex(idx)} className="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 relative z-20">
+              <button
+                onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
+                onMouseEnter={() => setHoveredIndex(idx)}
+                className="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 relative z-20"
+              >
                 {item.name}
-                <ChevronDown className={`h-4 w-4 transition-transform ${isAboutDropdownOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${isAboutDropdownOpen ? "rotate-180" : ""}`}
+                />
               </button>
 
               {/* Background hover effect untuk About */}
-              {hoveredIndex === idx && !isAboutDropdownOpen && <motion.div layoutId="hovered" className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800" />}
+              {hoveredIndex === idx && !isAboutDropdownOpen && (
+                <motion.div
+                  layoutId="hovered"
+                  className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                />
+              )}
 
               {/* Dropdown Menu */}
               <AnimatePresence>
@@ -99,14 +123,27 @@ export default function Header() {
               </AnimatePresence>
             </div>
           ) : (
-            <div key={`link-${idx}`} className="relative px-4 py-2" onMouseEnter={() => setHoveredIndex(idx)} onMouseLeave={() => setHoveredIndex(null)}>
-              <a className="text-neutral-600 dark:text-neutral-300 relative z-20" href={item.link}>
+            <div
+              key={`link-${idx}`}
+              className="relative px-4 py-2"
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <a
+                className="text-neutral-600 dark:text-neutral-300 relative z-20"
+                href={item.link}
+              >
                 <span className="relative z-20">{item.name}</span>
               </a>
 
-              {hoveredIndex === idx && <motion.div layoutId="hovered" className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800" />}
+              {hoveredIndex === idx && (
+                <motion.div
+                  layoutId="hovered"
+                  className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                />
+              )}
             </div>
-          )
+          ),
         )}
       </div>
     );
@@ -118,7 +155,13 @@ export default function Header() {
         {/* Desktop Navigation */}
         <NavBody>
           <Link href="/" className="relative z-20 flex items-center">
-            <Image src="/images/halcom-alter.png" alt="Halcom Logo" width={100} height={32} className="h-8 w-auto" />
+            <Image
+              src="/images/halcom-alter.png"
+              alt="Halcom Logo"
+              width={100}
+              height={32}
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Custom NavItems dengan dropdown support */}
@@ -135,42 +178,82 @@ export default function Header() {
         <MobileNav>
           <MobileNavHeader>
             <Link href="/" className="relative z-20 flex items-center">
-              <Image src="/images/halcom-alter.png" alt="Halcom Logo" width={100} height={32} className="h-8 w-auto" />
+              <Image
+                src="/images/halcom-alter.png"
+                alt="Halcom Logo"
+                width={100}
+                height={32}
+                className="h-8 w-auto"
+              />
             </Link>
-            <MobileNavToggle isOpen={isMobileMenuOpen} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
           </MobileNavHeader>
 
-          <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
-            <a href="/" onClick={() => setIsMobileMenuOpen(false)} className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors">
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          >
+            <a
+              href="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors"
+            >
               <span className="block">Home</span>
             </a>
 
             {/* Dropdown About untuk mobile */}
             <div className="w-full">
-              <div className="text-neutral-600 dark:text-neutral-300 font-medium py-2">About</div>
+              <div className="text-neutral-600 dark:text-neutral-300 font-medium py-2">
+                About
+              </div>
               <div className="pl-4 space-y-2 border-l border-gray-200 dark:border-neutral-700 ml-2">
                 {aboutDropdownItems.map((item, idx) => (
-                  <a key={`mobile-dropdown-${idx}`} href={item.link} onClick={() => setIsMobileMenuOpen(false)} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-primary transition-colors py-1">
+                  <a
+                    key={`mobile-dropdown-${idx}`}
+                    href={item.link}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-primary transition-colors py-1"
+                  >
                     {item.name}
                   </a>
                 ))}
               </div>
             </div>
 
-            <a href="/#solutions" onClick={() => setIsMobileMenuOpen(false)} className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors">
+            <a
+              href="/#solutions"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors"
+            >
               <span className="block">Solutions</span>
             </a>
 
-            <a href="/teams" onClick={() => setIsMobileMenuOpen(false)} className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors">
+            <a
+              href="/teams"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors"
+            >
               <span className="block">Teams</span>
             </a>
 
-            <a href="/events" onClick={() => setIsMobileMenuOpen(false)} className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors">
+            <a
+              href="/events"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors"
+            >
               <span className="block">Events</span>
             </a>
 
             <div className="flex w-full flex-col gap-4 pt-4">
-              <NavbarButton href="/#contact" onClick={() => setIsMobileMenuOpen(false)} variant="primary" className="w-full">
+              <NavbarButton
+                href="/#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                variant="primary"
+                className="w-full"
+              >
                 Contact Us
               </NavbarButton>
             </div>
