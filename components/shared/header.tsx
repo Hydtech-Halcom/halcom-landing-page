@@ -24,7 +24,7 @@ export default function Header() {
   // Data untuk item navbar
   const navItems = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
+    { name: "About Us", link: "/about" },
     { name: "Solutions", link: "/#solutions" },
     { name: "Projects", link: "/projects" },
     { name: "Events", link: "/events" },
