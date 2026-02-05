@@ -1,10 +1,19 @@
 "use client";
 
-import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import Image, { StaticImageData } from "next/image";
+import { Phone, MapPin, LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/lib/animations";
-import { HEAD_OFFICE, BRANCH_OFFICE, CONTACT_INFO } from "@/lib/constants/company";
+import { HEAD_OFFICE, BRANCH_OFFICES, CONTACT_INFO } from "@/lib/constants/company";
+import { TextAnimate } from "../ui/text-animate";
+
+interface OfficeCardProps {
+  icon: LucideIcon;
+  title: string;
+  lines: string[];
+  badge?: string;
+  imageSrc: StaticImageData | string;
+}
 
 export default function ContactSection() {
   return (
@@ -12,61 +21,111 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4">Get in Touch</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">Connect with Our Offices</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Visit us or reach out through our contact channels. Our expert team is ready to assist you with your IT infrastructure needs.</p>
+          <TextAnimate animation="blurIn" as="p" className="text-primary font-semibold text-sm uppercase tracking-wider mb-4">
+            Get in Touch
+          </TextAnimate>
+          <TextAnimate animation="blurIn" as="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Contact with Our Offices
+          </TextAnimate>
+          <TextAnimate animation="blurIn" as="p" className="text-lg text-muted-foreground max-w-2xl mx-auto mb-0">
+            We're here to help you build and maintain a robust IT infrastructure.
+          </TextAnimate>
         </motion.div>
 
-        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           {/* Head Office */}
-          <motion.div className="group p-8 bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl transition-all duration-300" variants={itemVariants}>
-            <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-              <MapPin className="text-primary group-hover:text-white transition-colors duration-300" size={28} />
-            </div>
-            <h3 className="text-xl font-bold text-foreground mb-4">{HEAD_OFFICE.name}</h3>
-            <div className="space-y-2 text-muted-foreground">
-              {HEAD_OFFICE.lines.map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
-            </div>
-          </motion.div>
+          <OfficeCard icon={MapPin} title={HEAD_OFFICE.name} lines={HEAD_OFFICE.lines} imageSrc={HEAD_OFFICE.imageSrc} />
 
-          {/* Branch Office */}
-          <motion.div className="group p-8 bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl transition-all duration-300" variants={itemVariants}>
-            <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-              <MapPin className="text-primary group-hover:text-white transition-colors duration-300" size={28} />
-            </div>
-            <h3 className="text-xl font-bold text-foreground mb-4">{BRANCH_OFFICE.name}</h3>
-            <div className="space-y-2 text-muted-foreground">
-              {BRANCH_OFFICE.lines.map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
-            </div>
-          </motion.div>
+          {/* Branch Offices */}
+          {BRANCH_OFFICES.map((office, i) => (
+            <OfficeCard key={i} icon={MapPin} title={office.name} imageSrc={office.imageSrc} lines={office.lines} />
+          ))}
 
-          {/* Quick Contact */}
-          <motion.div className="group p-8 bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1" variants={itemVariants}>
-            <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-              <Phone className="text-primary group-hover:text-white transition-colors duration-300" size={28} />
-            </div>
-            <h3 className="text-xl font-bold text-foreground mb-4">Direct Communication</h3>
-            <div className="space-y-4">
-              <a href={`tel:${CONTACT_INFO.phone}`} className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300">
-                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                  <Phone size={18} />
-                </div>
-                <span className="font-medium">{CONTACT_INFO.phone}</span>
-              </a>
-              <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300">
-                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                  <Mail size={18} />
-                </div>
-                <span className="font-medium truncate">{CONTACT_INFO.email}</span>
-              </a>
-            </div>
-          </motion.div>
+          {/* Contact */}
+          <ContactCard />
         </motion.div>
       </div>
     </section>
+  );
+}
+
+function OfficeCard({ icon: Icon, title, lines, badge, imageSrc }: OfficeCardProps) {
+  return (
+    <motion.div variants={itemVariants} className="relative group rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-2xl transition-all">
+      {/* Background Image */}
+      <div className="absolute inset-0 overflow-hidden">
+        <Image src={imageSrc} alt={title} fill priority={false} className="object-cover transition-transform duration-500 group-hover:scale-105" />
+      </div>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/55 group-hover:bg-black/40 transition-colors" />
+
+      {/* Content */}
+      <div className="relative p-8 text-white">
+        {badge && <span className="absolute top-4 right-4 text-xs px-3 py-1 rounded-full bg-primary/80 text-white backdrop-blur">{badge}</span>}
+
+        {/* Icon */}
+        <div className="w-14 h-14 bg-white/15 rounded-xl flex items-center justify-center mb-6">
+          <Icon size={28} className="text-white" />
+        </div>
+
+        {/* Title */}
+        <h3 className="text-lg font-bold mb-3">{title}</h3>
+
+        {/* Address */}
+        <div className="space-y-1 text-sm text-white/90">
+          {lines.map((line, i) => (
+            <p key={i}>{line}</p>
+          ))}
+        </div>
+      </div>
+
+      {/* Subtle Glow */}
+      <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-linear-to-br from-primary/20 via-transparent to-transparent" />
+    </motion.div>
+  );
+}
+
+function ContactCard() {
+  return (
+    <motion.div variants={itemVariants} className="relative group rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-2xl transition-all">
+      {/* Background Image */}
+      <div className="absolute inset-0 overflow-hidden">
+        <Image src="/assets/contact/cs.jpg" alt="Contact background" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority={false} />
+      </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/55 group-hover:bg-black/40 transition-colors" />
+
+      {/* Content */}
+      <div className="relative p-8 text-white flex flex-col justify-between h-full">
+        <div>
+          {/* Icon */}
+          <div className="w-14 h-14 bg-white/15 rounded-xl flex items-center justify-center mb-6 ">
+            <Phone size={28} className="text-white" />
+          </div>
+
+          {/* Title */}
+          <h3 className="text-xl font-bold mb-4">Direct Communication</h3>
+
+          {/* Contact */}
+          <div className="space-y-4">
+            <a href={`tel:${CONTACT_INFO.phone}`} className="block font-medium text-white/90 hover:text-white transition-colors">
+              {CONTACT_INFO.phone}
+            </a>
+
+            <a href={`mailto:${CONTACT_INFO.email}`} className="block font-medium truncate text-white/90 hover:text-white transition-colors">
+              {CONTACT_INFO.email}
+            </a>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <p className="text-sm text-white/80 mt-6">Available on business hours</p>
+      </div>
+
+      {/* Glow */}
+      <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-linear-to-br from-primary/20 via-transparent to-transparent" />
+    </motion.div>
   );
 }

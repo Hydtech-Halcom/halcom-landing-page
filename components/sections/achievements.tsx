@@ -7,6 +7,7 @@ import { IconTrendingUp, IconBriefcase, IconStar, IconRocket } from "@/component
 import { containerVariants, itemVariants } from "@/lib/animations";
 import { GridPattern } from "../ui/grid-pattern";
 import { cn } from "@/lib/utils";
+import { TextAnimate } from "../ui/text-animate";
 
 export default function Achievements() {
   const achievements = [
@@ -32,8 +33,12 @@ export default function Achievements() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">Our Achievements</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Explore the milestones and accomplishments that define our journey</p>
+          <TextAnimate animation="blurIn" as="h2" className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+            Our Achievements
+          </TextAnimate>
+          <TextAnimate animation="blurIn" as="p" className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Explore the milestones and accomplishments that define our journey
+          </TextAnimate>
         </motion.div>
 
         {/* Achievements Grid */}

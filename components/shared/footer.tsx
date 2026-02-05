@@ -4,13 +4,13 @@ import Link from "next/link";
 import { Facebook, Linkedin, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { HEAD_OFFICE, BRANCH_OFFICE, CONTACT_INFO, NAV_LINKS } from "@/lib/constants/company";
+import { HEAD_OFFICE, BRANCH_OFFICES, CONTACT_INFO, NAV_LINKS } from "@/lib/constants/company";
 
 export default function Footer() {
   return (
     <motion.footer className="w-full bg-foreground text-white">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Logo */}
           <div className="lg:col-span-1">
             <Image src="/images/halcom-white.png" alt="Halcom Logo" width={160} height={48} className="h-10 w-auto" />
@@ -42,23 +42,27 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Branch Office */}
-          <div className="lg:col-span-1">
-            <h3 className="font-semibold text-sm mb-3 uppercase tracking-wide">{BRANCH_OFFICE.name}</h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              {BRANCH_OFFICE.lines.map((line, index) => (
-                <span key={index}>
-                  {line}
-                  {index < BRANCH_OFFICE.lines.length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-          </div>
+          {/* Branch Offices */}
+          {BRANCH_OFFICES.map((office, i) => (
+            <div key={i}>
+              <h3 className="font-semibold text-sm mb-3 uppercase">{office.name}</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {office.lines.map((line, idx) => (
+                  <span key={idx}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </p>
+            </div>
+          ))}
 
           {/* Social Links */}
-          <div className="col-span-1 lg:col-span-1 text-right">
-            <h3 className="font-semibold text-sm mb-3 uppercase tracking-wide text-left md:text-right ">Find Us</h3>
-            <div className="flex gap-3 lg:justify-end">
+          {/* Social Links */}
+          <div className="lg:col-span-1 flex flex-col items-start lg:items-end">
+            <h3 className="font-semibold text-sm mb-3 uppercase tracking-wide">Find Us</h3>
+
+            <div className="flex gap-3 mb-4">
               {[
                 { icon: Instagram, href: "#" },
                 { icon: Facebook, href: "#" },
@@ -69,8 +73,11 @@ export default function Footer() {
                 </motion.a>
               ))}
             </div>
-            <p className="text-gray-300 text-sm mt-4 text-left md:text-right">
-              {CONTACT_INFO.phone} | {CONTACT_INFO.email}
+
+            <p className="text-gray-300 text-sm text-left lg:text-right">
+              {CONTACT_INFO.phone}
+              <br />
+              {CONTACT_INFO.email}
             </p>
           </div>
         </div>
