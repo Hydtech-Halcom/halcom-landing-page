@@ -3,6 +3,7 @@ import { BussinessSection } from "@/components/sections/about/BussinessSection";
 import { PageHero } from "@/components/shared/PageHero";
 import { AboutSection } from "@/components/sections/about/AboutSection";
 import TimelineRoadmap from "@/components/sections/about/TimeLineRoadmap";
+import { VisionMissionSection } from "@/components/sections/about/VissionMissionSection";
 
 export const metadata: Metadata = {
   title: "Tentang Kami",
@@ -30,6 +31,7 @@ export default function About() {
       />
       <TimelineRoadmap />
       <BussinessSection />
+      <VisionMissionSection />
     </main>
   );
 }

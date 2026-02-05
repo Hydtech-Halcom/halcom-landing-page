@@ -79,7 +79,7 @@ export function BussinessSection() {
       <section className="max-w-7xl mx-auto py-20">
         <div className="grid md:grid-cols-2 gap-6 items-start">
           <div className="col-span-2">
-            <span className="text-primary font-semibold tracking-widest text-sm">• LINE OF BUSSINESS</span>
+            <span className="inline-block px-4 py-1.5 text-primary font-semibold tracking-widest text-sm bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-full">• LINE OF BUSSINESS</span>
             <h2 className="text-3xl font-bold leading-tight mt-4">IT Infrastructure Specialist, Managed Services, Mechanical & Electrical and Industrial Automation.</h2>
           </div>
 
@@ -100,11 +100,17 @@ interface GenericCardFrontProps {
 
 function GenericCardFront({ data }: GenericCardFrontProps) {
   return (
-    <div className="flex flex-col h-full w-full p-4">
-      <img src={data.imageSrc} alt={data.imageAlt} className="w-full h-auto object-cover grow min-h-0 rounded-md" />
-      <div className="p-2">
-        <h3 className="text-base font-semibold mt-2">{data.title}</h3>
-        <p className="text-[13.5px] mt-2 text-muted-foreground">{data.description}</p>
+    <div className="relative h-full w-full overflow-hidden rounded-xl">
+      {/* IMAGE */}
+      <img src={data.imageSrc} alt={data.imageAlt} className="absolute inset-0 h-full w-full object-cover" />
+
+      {/* OVERLAY */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
+
+      {/* TEXT PROPOSITION */}
+      <div className="relative z-10 flex h-full flex-col justify-end p-5">
+        <h3 className="text-lg font-semibold text-white">{data.title}</h3>
+        <p className="mt-2 text-sm text-white/80 leading-relaxed">{data.description}</p>
       </div>
     </div>
   );
