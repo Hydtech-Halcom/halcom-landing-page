@@ -50,10 +50,23 @@ export default function AboutCompany() {
             </motion.div>
 
             {/* Highlights */}
-            <div className="flex justify-start">
-              <TextLoop className="text-xl sm:text-2xl font-medium text-foreground-secondary leading-normal" interval={3}>
+            {/* Mobile Layout */}
+            <div className="flex justify-start md:hidden">
+              <div className="space-y-3">
                 {highlights.map((highlight, index) => (
-                  <span key={index} className="flex items-center gap-3">
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
+                    <span className="text-base font-medium text-foreground-secondary leading-normal wrap-break-word">{highlight}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden md:flex justify-start md:max-w-full">
+              <TextLoop className="text-xl md:text-2xl font-medium text-foreground-secondary leading-normal" interval={3}>
+                {highlights.map((highlight, index) => (
+                  <span key={index} className="flex items-center gap-3 md:max-w-full">
                     <CheckCircle2 className="text-primary shrink-0" size={24} />
                     {highlight}
                   </span>
