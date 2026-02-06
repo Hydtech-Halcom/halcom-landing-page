@@ -129,15 +129,19 @@ const Logos3 = ({
                 <CarouselItem key={logo.id} className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
                   <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-10 flex shrink-0 items-center justify-center">
                     <div className="flex items-center justify-center w-full">
-                      <img src={logo.image} alt={logo.description} className={`${logo.className} max-h-8 sm:max-h-10 md:max-h-10 lg:max-h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 object-contain`} />
+                      <img
+                        src={logo.image}
+                        alt={logo.description}
+                        className={`${logo.className} max-h-8 sm:max-h-10 md:max-h-10 lg:max-h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 object-contain`}
+                      />
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="absolute inset-y-0 left-0 w-8 sm:w-12 bg-gradient-to-r from-background via-background/80 to-transparent pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-8 sm:w-12 bg-gradient-to-l from-background via-background/80 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-8 sm:w-12 bg-linear-to-r from-background via-background/80 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-8 sm:w-12 bg-linear-to-l from-background via-background/80 to-transparent pointer-events-none"></div>
         </div>
       </div>
 
@@ -158,15 +162,19 @@ const Logos3 = ({
                 <CarouselItem key={`${logo.id}-reverse`} className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
                   <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-10 flex shrink-0 items-center justify-center">
                     <div className="flex items-center justify-center w-full">
-                      <img src={logo.image} alt={logo.description} className={`${logo.className} max-h-8 sm:max-h-10 md:max-h-10 lg:max-h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 object-contain`} />
+                      <img
+                        src={logo.image}
+                        alt={logo.description}
+                        className={`${logo.className} max-h-8 sm:max-h-10 md:max-h-10 lg:max-h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 object-contain`}
+                      />
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="absolute inset-y-0 left-0 w-8 sm:w-12 bg-gradient-to-r from-background via-background/80 to-transparent pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-8 sm:w-12 bg-gradient-to-l from-background via-background/80 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-8 sm:w-12 bg-linear-to-r from-background via-background/80 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-8 sm:w-12 bg-linear-to-l from-background via-background/80 to-transparent pointer-events-none"></div>
         </div>
       </div>
     </section>

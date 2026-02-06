@@ -3,23 +3,22 @@
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, ChevronRight, Clock, Filter, MapPin, Search } from "lucide-react";
+import { Calendar, ChevronRight, Clock, Filter, MapPin, Search } from "lucide-react";
 import { useState } from "react";
 import { events } from "@/lib/constants/events";
 import { containerVariants, fadeInUp, itemVariants } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 
-const categories = ["Semua", "Forum & Business Matching", "Seminar & Technology Showcase", "Product Knowledge Session", "Conference", "Workshop"];
+const categories = ["All", "Forum & Business Matching", "Seminar & Technology Showcase", "Product Knowledge Session", "Conference", "Workshop"];
 
 export default function EventsPageSection() {
-  const [selectedCategory, setSelectedCategory] = useState("Semua");
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredEvents = events.filter(event => {
-    const categoryMatch = selectedCategory === "Semua" || event.category === selectedCategory;
+    const categoryMatch = selectedCategory === "All" || event.category === selectedCategory;
     const searchMatch =
       searchQuery === "" || event.title.toLowerCase().includes(searchQuery.toLowerCase()) || event.description.toLowerCase().includes(searchQuery.toLowerCase()) || event.location.toLowerCase().includes(searchQuery.toLowerCase());
 
@@ -51,15 +50,15 @@ export default function EventsPageSection() {
             <motion.div className="max-w-4xl mx-auto text-center" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <motion.div className="space-y-6" variants={fadeInUp}>
                 <Badge variant="outline" className="px-4 py-1.5 text-sm font-medium">
-                  Events & Kegiatan
+                  Events & Activities
                 </Badge>
 
                 <motion.h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight" variants={itemVariants}>
-                  Acara & <span className="text-primary">Kegiatan</span> Kami
+                  Our Events & <span className="text-primary">Activities</span>
                 </motion.h1>
 
                 <motion.p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed" variants={itemVariants}>
-                  Ikuti seminar, workshop, dan forum eksklusif kami untuk tetap update dengan teknologi terkini dan peluang bisnis
+                  Attend our exclusive seminars, workshops and forums to stay updated with the latest technology and business opportunities.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -70,18 +69,18 @@ export default function EventsPageSection() {
         <section className="py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Semua Acara</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6">All Events</h2>
 
               {/* Filters and Search */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <div className="relative flex-1 max-w-md">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                  <Input placeholder="Cari acara, lokasi, atau topik..." className="pl-10" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+                  <Input placeholder="Search for an event, location, or topic..." className="pl-10" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Filter className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm font-medium">Kategori:</span>
+                  <span className="text-sm font-medium">Category:</span>
                 </div>
               </div>
 
