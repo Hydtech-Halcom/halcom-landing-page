@@ -3,6 +3,23 @@
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import AutoScroll from "embla-carousel-auto-scroll";
 
+// Type definition for AutoScroll plugin options
+interface AutoScrollOptions {
+  playOnInit?: boolean;
+  speed?: number;
+  direction?: "forward" | "backward";
+  active?: boolean;
+  breakpoints?: Record<string, Partial<AutoScrollOptions>>;
+}
+
+// Define plugin type locally based on embla-carousel usage
+type CarouselPlugin = any;
+
+// Type-safe helper function for AutoScroll plugin
+const createAutoScrollPlugin = (options: AutoScrollOptions): CarouselPlugin => {
+  return AutoScroll(options);
+};
+
 interface Logo {
   id: string;
   description: string;
@@ -123,7 +140,7 @@ const Logos3 = ({
     <section className="py-6 sm:py-8">
       <div className="px-4 sm:px-0">
         <div className="relative mx-auto flex items-center justify-center max-w-5xl">
-          <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true, speed: 0.7 }) as any]}>
+          <Carousel opts={{ loop: true }} plugins={[createAutoScrollPlugin({ playOnInit: true, speed: 0.7 })]}>
             <CarouselContent className="ml-0">
               {logos.map(logo => (
                 <CarouselItem key={logo.id} className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
@@ -150,11 +167,11 @@ const Logos3 = ({
           <Carousel
             opts={{ loop: true }}
             plugins={[
-              AutoScroll({
+              createAutoScrollPlugin({
                 playOnInit: true,
                 speed: 0.7,
                 direction: "backward", // Ini yang membuat reverse
-              }) as any,
+              }),
             ]}
           >
             <CarouselContent className="ml-0">
