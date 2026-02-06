@@ -2,30 +2,57 @@
 
 export interface OfficeAddress {
   name: string;
+  area?: string;
   lines: string[];
   imageSrc: string;
   badge?: string;
+  phone?: string;
+  email?: string;
+  maps?: string;
+  available?: string;
 }
-
-export const HEAD_OFFICE: OfficeAddress = {
-  name: "Head Office",
-  lines: ["Palma Tower, 20th Floor Jl. RA Kartini II-S Kav-6", "Kebayoran Lama, Jakarta Selatan, 12310"],
-  imageSrc: "/assets/contact/halcom-jakarta.jpg",
-  badge: "HQ",
-};
 
 export const BRANCH_OFFICES: OfficeAddress[] = [
   {
-    name: "Branch Office – Batam",
-    lines: ["The Central Business Sukajadi Blok B2 No 3A", "Batam, Kepulauan Riau, 29444, Indonesia"],
-    imageSrc: "/assets/contact/halcom-batam.jpg",
-    badge: "Branch",
+    name: "PT Halcom Inovasi Teknologi",
+    area: "All Indonesia except Batam Area",
+    lines: [
+      "Palma Tower, 20th Floor, Jl. RA Kartini II-S Kav-6",
+      "Kebayoran Lama, South Jakarta, 12310",
+    ],
+    imageSrc: "/assets/contact/halcom-jakarta.jpg",
+    badge: "HQ",
+    phone: "+6281297218055",
+    email: "sales@halcominovasi.co.id",
+    maps: "https://maps.app.goo.gl/urcZjB1NcJahgayJ8",
+    available: "09:00 AM - 06:00 PM",
   },
   {
-    name: "Branch Office – Padang",
-    lines: ["Auditorium Universitas Negeri Padang", "Jl. Prof. Dr. Hamka, Air Tawar Barat", "Padang Utara, Kota Padang, Sumatera Barat"],
+    name: "PT Halcom Integrated Solution",
+    area: "Batam Area Only",
+    lines: [
+      "The Central Business Sukajadi Block B2 No 3A",
+      "Batam, Riau Islands, 29444, Indonesia",
+    ],
+    imageSrc: "/assets/contact/halcom-batam.jpg",
+    badge: "Branch",
+    phone: "+62818461503",
+    email: "sales@halcom.co.id",
+    maps: "https://maps.app.goo.gl/FULEJjsLDn5p4QM49",
+    available: "08:00 AM - 05:00 PM",
+  },
+  {
+    name: "PT Halcom Inovasi Teknologi",
+    area: "Branch Office – Padang",
+    lines: [
+      "Auditorium Universitas Negeri Padang Jl. Prof. Hamka, Air Tawar Barat, Padang Utara, Kota Padang, Sumatera Barat",
+    ],
     imageSrc: "/assets/contact/halcom-padang.jpg",
     badge: "Branch",
+    phone: "+628136376959",
+    email: "sales@halcominovasi.co.id",
+    maps: "https://maps.app.goo.gl/pqMoqsC5cKyMkswc7",
+    available: "09:00 AM - 05:00 PM",
   },
 ];
 
