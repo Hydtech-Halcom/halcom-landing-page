@@ -55,8 +55,8 @@ export default function AboutCompany() {
               <div className="space-y-3">
                 {highlights.map((highlight, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
-                    <span className="text-base font-medium text-foreground-secondary leading-normal wrap-break-word">{highlight}</span>
+                    <CheckCircle2 className="text-primary shrink-0" size={20} />
+                    <span className="text-base font-medium text-foreground-secondary leading-normal break-word">{highlight}</span>
                   </div>
                 ))}
               </div>

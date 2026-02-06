@@ -1,7 +1,7 @@
-'use client';
-import { cn } from '@/lib/utils';
-import { motion, AnimatePresence, Transition, Variants } from 'framer-motion';
-import { useState, useEffect, Children } from 'react';
+"use client";
+import { cn } from "@/lib/utils";
+import { motion, AnimatePresence, Transition, Variants } from "framer-motion";
+import { useState, useEffect, Children } from "react";
 
 type TextLoopProps = {
   children: React.ReactNode[];
@@ -12,14 +12,7 @@ type TextLoopProps = {
   onIndexChange?: (index: number) => void;
 };
 
-export function TextLoop({
-  children,
-  className,
-  interval = 2,
-  transition = { duration: 0.3 },
-  variants,
-  onIndexChange,
-}: TextLoopProps) {
+export function TextLoop({ children, className, interval = 2, transition = { duration: 0.3 }, variants, onIndexChange }: TextLoopProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const items = Children.toArray(children);
 
@@ -27,7 +20,7 @@ export function TextLoop({
     const intervalMs = interval * 1000;
 
     const timer = setInterval(() => {
-      setCurrentIndex((current) => {
+      setCurrentIndex(current => {
         const next = (current + 1) % items.length;
         onIndexChange?.(next);
         return next;
@@ -43,16 +36,9 @@ export function TextLoop({
   };
 
   return (
-    <div className={cn('relative inline-block', className)}>
-      <AnimatePresence mode='popLayout' initial={false}>
-        <motion.div
-          key={currentIndex}
-          initial='initial'
-          animate='animate'
-          exit='exit'
-          transition={transition}
-          variants={variants || motionVariants}
-        >
+    <div className={cn("relative inline-block whitespace-nowrap", className)}>
+      <AnimatePresence mode="popLayout" initial={false}>
+        <motion.div key={currentIndex} initial="initial" animate="animate" exit="exit" transition={transition} variants={variants || motionVariants}>
           {items[currentIndex]}
         </motion.div>
       </AnimatePresence>
