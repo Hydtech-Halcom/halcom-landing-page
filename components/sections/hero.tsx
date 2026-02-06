@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, containerVariants, itemVariants } from "@/lib/animations";
 import { NumberTicker } from "@/components/ui/number-ticker";
@@ -46,7 +45,7 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <Link
                   href="#solutions"
-                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-[100px] border-[1.5px] border-primary/40 bg-transparent px-8 py-3 text-sm font-semibold text-primary cursor-pointer transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)] hover:border-transparent hover:text-white hover:rounded-[12px] active:scale-[0.95] w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-[100px] border-[1.5px] border-primary/40 bg-transparent px-8 py-3 text-sm font-semibold text-primary cursor-pointer transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)] hover:border-transparent hover:text-white hover:rounded-[12px] active:scale-[0.95]"
                 >
                   <span className="relative z-10">Explore Solutions</span>
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-[50%] opacity-0 group-hover:w-55 group-hover:h-55 group-hover:opacity-100 transition-all duration-800 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
