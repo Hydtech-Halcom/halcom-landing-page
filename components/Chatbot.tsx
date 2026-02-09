@@ -123,12 +123,18 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-60 flex flex-col items-end">
+    <div className={cn("fixed z-60 transition-all duration-300 flex flex-col items-end", isOpen ? "inset-0 sm:inset-auto sm:bottom-8 sm:right-8" : "bottom-6 right-6 sm:bottom-8 sm:right-8")}>
       <AnimatePresence>
         {isOpen && (
-          <motion.div variants={chatContainerVariants} initial="hidden" animate="visible" exit="exit" className="mb-4 w-87.5 sm:w-100 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col">
+          <motion.div
+            variants={chatContainerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className={cn("bg-white shadow-2xl overflow-hidden border border-gray-100 flex flex-col transition-all duration-300", "w-full h-full sm:h-[600px] sm:w-100 sm:rounded-2xl sm:mb-4 sm:border")}
+          >
             {/* Header */}
-            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="bg-primary p-4 text-white flex justify-between items-center bg-linear-to-r from-primary to-primary/80">
+            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="bg-primary p-4 text-white flex justify-between items-center bg-linear-to-r from-primary to-primary/80 shrink-0">
               <div className="flex items-center gap-3">
                 <motion.div
                   initial={{ rotate: -20, scale: 0 }}
@@ -146,13 +152,14 @@ export default function Chatbot() {
                   </div>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-1.5 rounded-full transition-colors" aria-label="Close chat">
-                <Minimize2 size={18} />
+              <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-2 rounded-full transition-colors" aria-label="Close chat">
+                <X className="sm:hidden" size={24} />
+                <Minimize2 className="hidden sm:block" size={18} />
               </button>
             </motion.div>
 
             {/* Messages Area */}
-            <div ref={scrollRef} className="h-100 overflow-y-auto p-4 space-y-4 bg-gray-50/50 scroll-smooth">
+            <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50 scroll-smooth min-h-0">
               {messages.map((msg, index) => (
                 <motion.div custom={msg.sender} variants={messageVariants} initial="hidden" animate="visible" layout key={index} className={cn("flex flex-col", msg.sender === "user" ? "items-end" : "items-start")}>
                   <div className={cn("flex gap-2 max-w-[85%]", msg.sender === "user" ? "flex-row-reverse" : "flex-row")}>
@@ -187,7 +194,7 @@ export default function Chatbot() {
             </div>
 
             {/* Input Area */}
-            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="p-4 bg-white border-t border-gray-100">
+            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="p-4 bg-white border-t border-gray-100 shrink-0 pb-safe">
               <div className="flex gap-2 bg-gray-50 p-2 rounded-xl focus-within:ring-2 focus-within:ring-primary/20 transition-all border border-gray-200">
                 <input
                   value={input}
@@ -224,7 +231,7 @@ export default function Chatbot() {
               }
             : { y: 0 }
         }
-        className={cn("w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-61 relative", isOpen ? "bg-white text-gray-600 border border-gray-100" : "bg-primary text-white")}
+        className={cn("w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-61 relative transition-all duration-300", isOpen ? "bg-white text-gray-600 border border-gray-100 hidden sm:flex" : "bg-primary text-white flex")}
       >
         <AnimatePresence mode="wait">
           <motion.div key={isOpen ? "close" : "open"} initial={{ opacity: 0, rotate: -90, scale: 0.5 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} exit={{ opacity: 0, rotate: 90, scale: 0.5 }} transition={{ duration: 0.2 }}>
