@@ -1,52 +1,72 @@
 {
   "data": [
     {
-      "context": ["hi", "hello", "greeting", "good morning", "good afternoon"],
+      "context": ["hi", "hello", "greeting", "good morning", "good afternoon", "halo", "hai"],
       "answer": "Hello! Welcome to Halcom. I am your virtual assistant. How can I help you with our IT Infrastructure solutions today?"
     },
     {
-      "context": ["who is halcom", "about halcom", "what does halcom do", "company profile", "company overview", "tell me about your company"],
-      "answer": "Halcom is an IT Infrastructure Specialist established in 2003. We provide total solutions with over 20 years of experience and expert certified teams to empower businesses of all sizes."
+      "context": ["who is halcom", "about halcom", "what does halcom do", "company profile", "company overview", "tell me about your company", "sejarah halcom", "tentang kami"],
+      "answer": "Halcom is an IT Infrastructure Specialist established on June 18, 2003, in Batam. We have over 20 years of experience providing total solutions with expert certified teams for enterprise and government segments. We focus on IT Infrastructure, IT Consulting, Industrial Automation, and Mechanical & Electrical services."
     },
     {
-      "context": ["what services do you offer", "our solutions", "what are your products", "list of services", "what can you do"],
-      "answer": "We offer transformative IT solutions including Custom Infrastructure Design, Comprehensive Cloud Services, Advanced Network Solutions with 24/7 monitoring, and Enterprise-grade Security Solutions."
+      "context": ["what services do you offer", "our solutions", "what are your products", "list of services", "what can you do", "layanan", "solusi"],
+      "answer": "We offer four main lines of business: 1) IT Infrastructure Specialist (Hardwares, Softwares, Project Management), 2) Managed Services (Preventive Maintenance), 3) Mechanical & Electrical (Design & Installation), and 4) Industrial Automation (Manual to Automated transformation)."
     },
     {
-      "context": ["infrastructure", "infrastructure services", "it design"],
-      "answer": "Our Infrastructure services provide custom IT infrastructure design tailored specifically to your business needs and scalability requirements."
+      "context": ["it infrastructure", "infrastructure services", "it design", "infrastruktur"],
+      "answer": "As an IT Infrastructure Specialist, we provide optimal solutions including IT hardware and software, project management, installation, testing, and training tailored to your business needs."
     },
     {
-      "context": ["cloud", "cloud services", "cloud computing"],
-      "answer": "We provide comprehensive cloud infrastructure services designed for modern businesses and enterprises to ensure flexibility and efficiency."
+      "context": ["cloud", "cloud services", "cloud computing", "migrasi cloud"],
+      "answer": "We provide comprehensive cloud infrastructure services and seamless migration from legacy systems to modern cloud environments, optimizing your business efficiency."
     },
     {
-      "context": ["network", "networking", "network solutions"],
-      "answer": "Our Network solutions offer advanced networking capabilities with 24/7 monitoring and optimal performance management."
+      "context": ["network", "networking", "network solutions", "jaringan"],
+      "answer": "Our Network solutions offer advanced networking architecture with 24/7 monitoring and performance management to ensure business continuity."
     },
     {
-      "context": ["security", "cyber security", "it security", "safety"],
-      "answer": "We provide enterprise-grade security solutions that ensure compliance with international standards to protect your business assets."
+      "context": ["security", "cyber security", "it security", "safety", "keamanan", "audit keamanan"],
+      "answer": "We provide enterprise-grade security solutions, including security audits and compliance implementation, ensuring your business meets international standards."
     },
     {
-      "context": ["why choose halcom", "why us", "advantages", "benefits"],
-      "answer": "Choose Halcom for our Expert Teams (20+ years experience), Financial Stability (backed by HSBC and Mandiri), Strategic Partnerships with global players, and our ability to provide Total Solutions."
+      "context": ["industrial automation", "automation", "otomasi industri"],
+      "answer": "Halcom transforms manual or semi-automatic processes into complete sets of automated processes, allowing your industry to achieve efficient results."
     },
     {
-      "context": ["partners", "clients", "who do you work with", "technology partners", "brands"],
-      "answer": "We partner with global industry leaders including Cisco, Huawei, Samsung, Dell, Oracle, Microsoft, VMware, Palo Alto, Honeywell, and many others."
+      "context": ["mechanical and electrical", "m&e", "mekanikal elektrikal"],
+      "answer": "We provide design, supervision, and installation of electrical and mechanical works for facilities such as office buildings, hotels, airports, and manufacturing plants."
     },
     {
-      "context": ["certifications", "awards", "iso", "achievements"],
-      "answer": "Halcom is recognized with ISO 45001:2018 (Occupational Health & Safety), ISO 9001:2015 (Quality Management), and PLN Certification."
+      "context": ["why choose halcom", "why us", "advantages", "benefits", "keunggulan"],
+      "answer": "Choose Halcom for our Expert Teams (20+ years experience), Financial Stability (supported by HSBC and Mandiri), Strategic Partnerships with global technology leaders, and our commitment to providing Total Solutions."
     },
     {
-      "context": ["contact", "contact us", "phone number", "email", "how to reach you"],
-      "answer": "You can reach us at sales@halcominovasi.co.id or call us at +62 21-3003-3418. We are available during business hours."
+      "context": ["partners", "clients", "who do you work with", "technology partners", "brands", "mitra"],
+      "answer": "We partner with global industry leaders including Cisco, Huawei, Dell EMC (Gold Partner), Allied Telesis (Platinum Partner), HPE (Silver Partner), VMware (Enterprise Partner), APC, Honeywell, and Samsung."
     },
     {
-      "context": ["location", "address", "where is your office", "office locations", "jakarta office", "batam office", "padang office"],
-      "answer": "Our Head Office is in Jakarta (Palma Tower, 20th Floor). We also have branch offices in Batam (The Central Business Sukajadi) and Padang (Universitas Negeri Padang)."
+      "context": ["certifications", "achievements", "iso", "penghargaan"],
+      "answer": "Halcom is recognized with ISO 45001:2018 (Occupational Health & Safety), ISO 9001:2015 (Quality Management), and PLN Certification, validating our expertise and commitment to excellence."
+    },
+    {
+      "context": ["team", "who is the ceo", "management", "manajemen", "ahmad wijaya", "budi santoso"],
+      "answer": "Our leadership includes Ahmad Wijaya (CEO - 25+ years exp), Budi Santoso (Technical Director - Cloud Expert), Siti Nurhaliza (Operations Manager), and Rudi Hermawan (Senior Solutions Architect)."
+    },
+    {
+      "context": ["projects", "success stories", "portfolio", "proyek"],
+      "answer": "We have completed 200+ successful projects, including Enterprise Data Centers, Cloud Migrations, Network Modernization, and Infrastructure Automation."
+    },
+    {
+      "context": ["contact", "contact us", "phone number", "email", "how to reach you", "kontak", "nomor telepon"],
+      "answer": "You can reach us at sales@halcominovasi.co.id or call our Jakarta Head Office at +62 21-3003-3418. For Batam, email sales@halcom.co.id."
+    },
+    {
+      "context": ["location", "address", "where is your office", "office locations", "jakarta office", "batam office", "padang office", "alamat"],
+      "answer": "Our offices are in 1) Jakarta (Palma Tower, 20th Floor), 2) Batam (The Central Business Sukajadi), and 3) Padang (Auditorium Universitas Negeri Padang)."
+    },
+    {
+      "context": ["vision", "mission", "visi", "misi"],
+      "answer": "Our Vision is to be a leading IT company providing professional solutions. Our Mission includes developing competitive IT products, providing elite service, and promoting innovation and professionalism."
     }
   ]
 }

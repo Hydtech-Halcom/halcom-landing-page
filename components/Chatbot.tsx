@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { getBotResponse } from "@/lib/chatbotLogic";
 import { MessageCircle, X, Send, Bot, User, Minimize2 } from "lucide-react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -91,19 +90,36 @@ export default function Chatbot() {
       timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
 
     setIsTyping(true);
-    setTimeout(() => {
-      const botResponse = getBotResponse(userMsg);
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: updatedMessages }),
+      });
+
+      const data = await response.json();
+
       const botMessage: Message = {
         sender: "bot",
-        text: botResponse,
+        text: data.text,
         timestamp: new Date(),
       };
       setMessages(prev => [...prev, botMessage]);
+    } catch (error) {
+      console.error("Error calling chat API:", error);
+      const errorMessage: Message = {
+        sender: "bot",
+        text: "I'm having trouble connecting to my brain right now. Please try again later.",
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1000);
+    }
   };
 
   return (
