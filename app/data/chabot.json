@@ -53,8 +53,12 @@
       "answer": "Our leadership includes Ahmad Wijaya (CEO - 25+ years exp), Budi Santoso (Technical Director - Cloud Expert), Siti Nurhaliza (Operations Manager), and Rudi Hermawan (Senior Solutions Architect)."
     },
     {
-      "context": ["projects", "success stories", "portfolio", "proyek"],
-      "answer": "We have completed 200+ successful projects, including Enterprise Data Centers, Cloud Migrations, Network Modernization, and Infrastructure Automation."
+      "context": ["projects", "success stories", "portfolio", "proyek", "daftar proyek", "apa saja proyek yang pernah dikerjakan", "proyek unp", "proyek pnp"],
+      "answer": "Halcom has a strong portfolio with 200+ successful projects. Key projects include: \n\nAt Universitas Negeri Padang (UNP):\n- Glass Board Interactive Display\n- Smart Wall Panel System\n- Book Drop System (Flex Book Drop HF RFID Manual Flat Front - AMH510005-000)\n- Book Scanner System (SelfCheck 1000 white - SCK600000-000)\n- Digital Library System\n- RFID Gate System (RFID Premium gate Baseplate, 1 aisle - GAT000812-000)\n- Digital Computer Lab\n- Digital Control Room\n- Server Infrastructure\n- Digital Standing Kiosk (MultiTech Custom Kiosk - MTK-032-TS)\n\nAt Politeknik Negeri Padang (PNP):\n- Glass Board Interactive Display\n- Digital Monitor Display\n- High Performance Computing (Super Computer)\n- Digital Theater Room (State-of-the-art with immersive AV)\n- LED Videotron Display (Outdoor scale)\n- Indoor LED Display Wall\n\nWe also handle Enterprise Data Centers, Cloud Migrations, and Network Modernization projects globally."
+    },
+    {
+      "context": ["events", "activity", "seminar", "workshop", "kegiatan", "acara", "jadwal acara"],
+      "answer": "Halcom is active in various industry events. Some of our upcoming events in 2025 include: \n\n1. Forum Komunikasi & Business Matching (IFPI Ke-9) - April 24, 2025, at Harris Hotel Batam.\n2. Epson Solution for Innovation & Empowerment - September 30, 2025, at Hotel Santika Premiere Padang.\n3. Product Knowledge Session: Smart Campus Empowerment - August 28, 2025, at UNP Hotel & Convention Center.\n\nThese events focus on strengthening collaborations and showcasing the latest technology solutions for digital empowerment and smart campuses."
     },
     {
       "context": ["contact", "contact us", "phone number", "email", "how to reach you", "kontak", "nomor telepon"],
