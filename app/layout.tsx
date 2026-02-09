@@ -7,6 +7,7 @@ import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
 import SmoothScroll from "@/components/shared/smooth-scroll";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
+import Chatbot from "@/components/Chatbot";
 
 const _rubik = Rubik({ subsets: ["latin"] });
 const _notoSans = Noto_Sans({ subsets: ["latin"] });
@@ -19,19 +20,8 @@ export const metadata: Metadata = {
     default: "Halcom - IT Infrastructure Specialist Solutions",
     template: "%s | Halcom",
   },
-  description:
-    "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience serving enterprise clients since 2003.",
-  keywords: [
-    "IT Infrastructure",
-    "IT Solutions",
-    "Data Center",
-    "Network Solutions",
-    "Cloud Services",
-    "IT Consulting",
-    "Enterprise IT",
-    "Halcom",
-    "Indonesia",
-  ],
+  description: "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience serving enterprise clients since 2003.",
+  keywords: ["IT Infrastructure", "IT Solutions", "Data Center", "Network Solutions", "Cloud Services", "IT Consulting", "Enterprise IT", "Halcom", "Indonesia"],
   authors: [{ name: "Halcom", url: baseUrl }],
   creator: "Halcom",
   publisher: "Halcom",
@@ -49,8 +39,7 @@ export const metadata: Metadata = {
     url: baseUrl,
     siteName: "Halcom",
     title: "Halcom - IT Infrastructure Specialist Solutions",
-    description:
-      "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience serving enterprise clients since 2003.",
+    description: "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience serving enterprise clients since 2003.",
     images: [
       {
         url: "/assets/og-image.png",
@@ -65,8 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Halcom - IT Infrastructure Specialist Solutions",
-    description:
-      "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience.",
+    description: "Halcom provides comprehensive IT Infrastructure solutions with expert certified teams and 20+ years of experience.",
     images: ["/assets/og-image.png"],
   },
 
@@ -85,11 +73,7 @@ export const metadata: Metadata = {
 
   // Icons
   icons: {
-    icon: [
-      { url: "/assets/halcom.png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
+    icon: [{ url: "/assets/halcom.png" }, { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" }, { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" }],
     apple: "/apple-icon.png",
     shortcut: "/favicon.ico",
   },
@@ -117,6 +101,7 @@ export default function RootLayout({
         <Analytics />
         <SmoothScroll />
         <ScrollToTop />
+        <Chatbot />
         <Footer />
       </body>
     </html>

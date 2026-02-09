@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "context": ["hi", "hello", "greeting", "good morning", "good afternoon"],
+      "answer": "Hello! Welcome to Halcom. I am your virtual assistant. How can I help you with our IT Infrastructure solutions today?"
+    },
+    {
+      "context": ["who is halcom", "about halcom", "what does halcom do", "company profile", "company overview", "tell me about your company"],
+      "answer": "Halcom is an IT Infrastructure Specialist established in 2003. We provide total solutions with over 20 years of experience and expert certified teams to empower businesses of all sizes."
+    },
+    {
+      "context": ["what services do you offer", "our solutions", "what are your products", "list of services", "what can you do"],
+      "answer": "We offer transformative IT solutions including Custom Infrastructure Design, Comprehensive Cloud Services, Advanced Network Solutions with 24/7 monitoring, and Enterprise-grade Security Solutions."
+    },
+    {
+      "context": ["infrastructure", "infrastructure services", "it design"],
+      "answer": "Our Infrastructure services provide custom IT infrastructure design tailored specifically to your business needs and scalability requirements."
+    },
+    {
+      "context": ["cloud", "cloud services", "cloud computing"],
+      "answer": "We provide comprehensive cloud infrastructure services designed for modern businesses and enterprises to ensure flexibility and efficiency."
+    },
+    {
+      "context": ["network", "networking", "network solutions"],
+      "answer": "Our Network solutions offer advanced networking capabilities with 24/7 monitoring and optimal performance management."
+    },
+    {
+      "context": ["security", "cyber security", "it security", "safety"],
+      "answer": "We provide enterprise-grade security solutions that ensure compliance with international standards to protect your business assets."
+    },
+    {
+      "context": ["why choose halcom", "why us", "advantages", "benefits"],
+      "answer": "Choose Halcom for our Expert Teams (20+ years experience), Financial Stability (backed by HSBC and Mandiri), Strategic Partnerships with global players, and our ability to provide Total Solutions."
+    },
+    {
+      "context": ["partners", "clients", "who do you work with", "technology partners", "brands"],
+      "answer": "We partner with global industry leaders including Cisco, Huawei, Samsung, Dell, Oracle, Microsoft, VMware, Palo Alto, Honeywell, and many others."
+    },
+    {
+      "context": ["certifications", "awards", "iso", "achievements"],
+      "answer": "Halcom is recognized with ISO 45001:2018 (Occupational Health & Safety), ISO 9001:2015 (Quality Management), and PLN Certification."
+    },
+    {
+      "context": ["contact", "contact us", "phone number", "email", "how to reach you"],
+      "answer": "You can reach us at sales@halcominovasi.co.id or call us at +62 21-3003-3418. We are available during business hours."
+    },
+    {
+      "context": ["location", "address", "where is your office", "office locations", "jakarta office", "batam office", "padang office"],
+      "answer": "Our Head Office is in Jakarta (Palma Tower, 20th Floor). We also have branch offices in Batam (The Central Business Sukajadi) and Padang (Universitas Negeri Padang)."
+    }
+  ]
+}
