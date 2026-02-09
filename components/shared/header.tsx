@@ -26,7 +26,7 @@ export default function Header() {
     { name: "About Us", link: "/about" },
     { name: "Partners", link: "/partner" },
     { name: "Customers", link: "/customers" },
-    { name: "Teams", link: "/teams" },
+    { name: "Qualifications", link: "/qualifications" },
   ];
 
   // Close dropdown when clicking outside

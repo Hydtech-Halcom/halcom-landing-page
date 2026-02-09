@@ -1,14 +1,12 @@
 import { Metadata } from "next";
-import ExpertTeamsSection from "@/components/sections/teams/expert-teams-section";
+import ExpertTeamsSection from "@/components/sections/qualifications/expert-teams-section";
 
 export const metadata: Metadata = {
   title: "Tim Ahli",
-  description:
-    "Kenali tim ahli bersertifikasi Halcom yang berpengalaman dalam menyediakan solusi IT Infrastructure terbaik untuk enterprise.",
+  description: "Kenali tim ahli bersertifikasi Halcom yang berpengalaman dalam menyediakan solusi IT Infrastructure terbaik untuk enterprise.",
   openGraph: {
     title: "Tim Ahli | Halcom",
-    description:
-      "Kenali tim ahli bersertifikasi Halcom yang berpengalaman dalam solusi IT Infrastructure.",
+    description: "Kenali tim ahli bersertifikasi Halcom yang berpengalaman dalam solusi IT Infrastructure.",
   },
 };
 
