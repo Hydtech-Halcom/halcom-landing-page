@@ -6,8 +6,8 @@ import { TextAnimate } from "../ui/text-animate";
 
 const solutions: iCardItem[] = [
   {
-    title: "Infrastructure",
-    description: "Custom IT infrastructure design tailored to your business needs and scalability requirements.",
+    title: "IT Infrastructure",
+    description: "IT infrastructure, also called technology infrastructure, is what enables a company to build and run the applications that underpin its business.",
     tag: "Design",
     src: "/assets/why-choose/bank-backed.jpg",
     link: "#contact",
@@ -15,30 +15,48 @@ const solutions: iCardItem[] = [
     textColor: "#ffffff",
   },
   {
-    title: "Cloud",
-    description: "Comprehensive cloud infrastructure services for modern businesses and enterprises.",
+    title: "Physical & Cyber Security",
+    description: "IT perimeter security is the process of securing a network perimeter by implementing a combination of software, devices, and techniques.",
     tag: "Solutions",
-    src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop",
     link: "#contact",
     color: "#0f172a", // Slate 900
     textColor: "#ffffff",
   },
   {
-    title: "Network",
-    description: "Advanced networking solutions with 24/7 monitoring and optimal performance management.",
+    title: "Managed Service & Maintenance",
+    description: "As part of IT Solution for your needs, we committed to give best services through our managed services and maintenance services solution.",
     tag: "Management",
-    src: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop",
     link: "#contact",
     color: "#1e293b", // Slate 800
     textColor: "#ffffff",
   },
   {
-    title: "Security",
-    description: "Enterprise-grade security solutions with compliance to international standards.",
+    title: "Mechanical Electrical Cabling Services",
+    description: "To achieved end to end solution to our customer, we provide cabling solution services for your IT and Production Infrastructure.",
     tag: "Compliance",
-    src: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2000&auto=format&fit=crop",
     link: "#contact",
     color: "#334155", // Slate 700
+    textColor: "#ffffff",
+  },
+  {
+    title: "Display and Audio",
+    description: "includes compute, network, workplace, data platform and edge capabilities.",
+    tag: "Compliance",
+    src: "https://images.unsplash.com/photo-1634532843953-a4fe7334b50d?q=80&w=2000&auto=format&fit=crop",
+    link: "#contact",
+    color: "#334155", // Slate 600
+    textColor: "#ffffff",
+  },
+  {
+    title: "Smart Meeting",
+    description: "Our smart meeting room solution integrates advanced audiovisual systems and seamless collaboration tools, enabling efficient discussions, remote connectivity, and decision-making for university teams and stakeholders.",
+    tag: "Compliance",
+    src: "https://images.unsplash.com/photo-1631246957572-0c49e4ee6ff4?q=80&w=2000&auto=format&fit=crop",
+    link: "#contact",
+    color: "#334155", // Slate 600
     textColor: "#ffffff",
   },
 ];

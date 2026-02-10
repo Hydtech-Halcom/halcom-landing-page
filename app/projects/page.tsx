@@ -4,12 +4,10 @@ import { ProjectSection } from "@/components/sections/project/project-section";
 
 export const metadata: Metadata = {
   title: "Proyek Kami",
-  description:
-    "Jelajahi portofolio proyek sukses kami dan temukan bagaimana kami memberikan keunggulan melalui teknologi mutakhir dan keahlian yang berdedikasi.",
+  description: "Jelajahi portofolio proyek sukses kami dan temukan bagaimana kami memberikan keunggulan melalui teknologi mutakhir dan keahlian yang berdedikasi.",
   openGraph: {
     title: "Proyek Kami | Halcom",
-    description:
-      "Jelajahi portofolio proyek sukses kami dengan teknologi mutakhir dan keahlian yang berdedikasi.",
+    description: "Jelajahi portofolio proyek sukses kami dengan teknologi mutakhir dan keahlian yang berdedikasi.",
   },
 };
 
@@ -25,7 +23,7 @@ export default function ProjectsPage() {
           </>
         }
         description="Explore our portfolio of successful projects and discover how we deliver excellence through cutting-edge technology and dedicated expertise."
-        backgroundImage="/assets/images/project.webp"
+        backgroundImage="/assets/project/vidiotron-pnp.jpg"
       />
       <ProjectSection />
     </main>

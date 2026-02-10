@@ -14,17 +14,6 @@ export interface OfficeAddress {
 
 export const BRANCH_OFFICES: OfficeAddress[] = [
   {
-    name: "PT Halcom Inovasi Teknologi",
-    area: "All Indonesia except Batam Area",
-    lines: ["Palma Tower, 20th Floor, Jl. RA Kartini II-S Kav-6", "Kebayoran Lama, South Jakarta, 12310"],
-    imageSrc: "/assets/contact/halcom-jakarta.jpg",
-    badge: "HQ",
-    phone: "+6281297218055",
-    email: "sales@halcominovasi.co.id",
-    maps: "https://maps.app.goo.gl/urcZjB1NcJahgayJ8",
-    available: "09:00 AM - 06:00 PM",
-  },
-  {
     name: "PT Halcom Integrated Solution",
     area: "Batam Area Only",
     lines: ["The Central Business Sukajadi Block B2 No 3A", "Batam, Riau Islands, 29444, Indonesia"],
@@ -34,6 +23,17 @@ export const BRANCH_OFFICES: OfficeAddress[] = [
     email: "sales@halcom.co.id",
     maps: "https://maps.app.goo.gl/FULEJjsLDn5p4QM49",
     available: "08:00 AM - 05:00 PM",
+  },
+  {
+    name: "PT Halcom Inovasi Teknologi",
+    area: "All Indonesia except Batam Area",
+    lines: ["Palma Tower, 20th Floor, Jl. RA Kartini II-S Kav-6", "Kebayoran Lama, South Jakarta, 12310"],
+    imageSrc: "/assets/contact/halcom-jakarta.jpg",
+    badge: "HQ",
+    phone: "+6281297218055",
+    email: "sales@halcominovasi.co.id",
+    maps: "https://maps.app.goo.gl/urcZjB1NcJahgayJ8",
+    available: "09:00 AM - 06:00 PM",
   },
   {
     name: "PT Halcom Inovasi Teknologi",
