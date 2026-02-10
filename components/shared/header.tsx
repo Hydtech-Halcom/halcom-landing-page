@@ -107,7 +107,7 @@ export default function Header() {
 
               {hoveredIndex === idx && <motion.div layoutId="hovered" className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800" />}
             </div>
-          )
+          ),
         )}
       </div>
     );
@@ -142,35 +142,47 @@ export default function Header() {
           </MobileNavHeader>
 
           <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
-            <a href="/" onClick={() => setIsMobileMenuOpen(false)} className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors">
-              <span className="block">Home</span>
-            </a>
+            {navItems.map((item, idx) => {
+              if (item.name === "About Us") {
+                return (
+                  <div key={`mobile-link-${idx}`} className="w-full">
+                    <button onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)} className="flex w-full items-center justify-between py-2 text-neutral-600 dark:text-neutral-300 font-medium hover:text-primary transition-colors">
+                      <span>About</span>
+                      <ChevronDown className={`h-4 w-4 transition-transform ${isAboutDropdownOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    <AnimatePresence>
+                      {isAboutDropdownOpen && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden bg-gray-50 dark:bg-neutral-900 rounded-lg">
+                          <div className="flex flex-col py-1">
+                            {aboutDropdownItems.map((subItem, sIdx) => (
+                              <Link
+                                key={`mobile-sub-${sIdx}`}
+                                href={subItem.link}
+                                onClick={() => {
+                                  setIsMobileMenuOpen(false);
+                                  setIsAboutDropdownOpen(false);
+                                }}
+                                className="px-4 py-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-primary transition-colors"
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
 
-            {/* Dropdown About untuk mobile */}
-            <div className="w-full">
-              <div className="text-neutral-600 dark:text-neutral-300 font-medium py-2">About</div>
-              <div className="pl-4 space-y-2 border-l border-gray-200 dark:border-neutral-700 ml-2">
-                {aboutDropdownItems.map((item, idx) => (
-                  <a key={`mobile-dropdown-${idx}`} href={item.link} onClick={() => setIsMobileMenuOpen(false)} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-primary transition-colors py-1">
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
+              return (
+                <Link key={`mobile-link-${idx}`} href={item.link} onClick={() => setIsMobileMenuOpen(false)} className="relative text-neutral-600 dark:text-neutral-300 block w-full py-2 font-medium hover:text-primary transition-colors">
+                  <span className="block">{item.name}</span>
+                </Link>
+              );
+            })}
 
-            <a href="/#solutions" onClick={() => setIsMobileMenuOpen(false)} className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors">
-              <span className="block">Solutions</span>
-            </a>
-
-            <a href="/teams" onClick={() => setIsMobileMenuOpen(false)} className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors">
-              <span className="block">Teams</span>
-            </a>
-
-            <a href="/events" onClick={() => setIsMobileMenuOpen(false)} className="relative text-neutral-600 dark:text-neutral-300 block py-2 hover:text-primary transition-colors">
-              <span className="block">Events</span>
-            </a>
-
-            <div className="flex w-full flex-col gap-4 pt-4">
+            <div className="flex w-full flex-col gap-4 pt-4 border-t border-gray-100 dark:border-neutral-800">
               <NavbarButton href="/#contact" onClick={() => setIsMobileMenuOpen(false)} variant="primary" className="w-full">
                 Contact Us
               </NavbarButton>
