@@ -20,10 +20,12 @@ export async function POST(req: Request) {
       
       Guidelines:
       1. Use the knowledge base provided above as your primary source of truth.
-      2. If the user asks something not in the knowledge base, try to answer professionally while staying relevant to IT Infrastructure, or direct them to sales@halcominovasi.co.id.
-      3. Be professional, helpful, and friendly.
-      4. Keep responses concise and suitable for a chat window.
-      5. You can speak in the language the user uses (English or Indonesian).
+      2. Keep links in Markdown format, for example: [Link Name](URL).
+      3. If the knowledge base contains URLs, preserve them exactly as they are.
+      4. If the user asks something not in the knowledge base, try to answer professionally while staying relevant to IT Infrastructure, or direct them to sales@halcominovasi.co.id.
+      5. Be professional, helpful, and friendly.
+      6. Keep responses concise and suitable for a chat window.
+      7. You can speak in the language the user uses (English or Indonesian).
     `;
 
     const chatCompletion = await groq.chat.completions.create({
