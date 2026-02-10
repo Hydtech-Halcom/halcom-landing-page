@@ -123,7 +123,7 @@ export default function Chatbot() {
   };
 
   return (
-    <div className={cn("fixed z-60 transition-all duration-300 flex flex-col items-end", isOpen ? "inset-0 sm:inset-auto sm:bottom-8 sm:right-8" : "bottom-6 right-6 sm:bottom-8 sm:right-8")}>
+    <div className={cn("fixed z-[60] transition-all duration-300 flex flex-col items-end", isOpen ? "inset-0 sm:inset-auto sm:bottom-8 sm:right-8" : "bottom-6 right-6 sm:bottom-8 sm:right-8")}>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -131,7 +131,7 @@ export default function Chatbot() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className={cn("bg-white shadow-2xl overflow-hidden border border-gray-100 flex flex-col transition-all duration-300", "w-full h-full sm:h-[600px] sm:w-100 sm:rounded-2xl sm:mb-4 sm:border")}
+            className={cn("bg-white shadow-2xl overflow-hidden border border-gray-100 flex flex-col transition-all duration-300 pointer-events-auto", "w-full h-full sm:h-[600px] sm:w-100 sm:rounded-2xl sm:mb-4 sm:border")}
           >
             {/* Header */}
             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="bg-primary p-4 text-white flex justify-between items-center bg-linear-to-r from-primary to-primary/80 shrink-0">
@@ -171,9 +171,12 @@ export default function Chatbot() {
                     </motion.div>
                     <motion.div
                       layoutId={`msg-${index}`}
-                      className={cn("px-4 py-2.5 rounded-2xl text-sm shadow-sm whitespace-pre-wrap", msg.sender === "user" ? "bg-primary text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none")}
+                      className={cn(
+                        "px-4 py-2.5 rounded-2xl text-sm shadow-sm whitespace-pre-wrap break-words",
+                        msg.sender === "user" ? "bg-primary text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none",
+                      )}
                     >
-                      {msg.text.split(/(\[.*?\]\(.*?\)|https?:\/\/[^\s]+)/g).map((part, i) => {
+                      {msg.text.split(/(\[.*?\]\(.*?\)|https?:\/\/[^\s]+(?=[^.,:;?!)]|$))/g).map((part, i) => {
                         const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
                         if (linkMatch) {
                           return (
@@ -182,7 +185,8 @@ export default function Chatbot() {
                               href={linkMatch[2]}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className={cn("underline font-bold decoration-2 underline-offset-2", msg.sender === "user" ? "text-white hover:text-white/80" : "text-primary hover:text-primary/80")}
+                              className={cn("underline font-bold decoration-2 underline-offset-2 transition-colors inline-block", msg.sender === "user" ? "text-white hover:text-white/80" : "text-primary hover:text-primary/80")}
+                              onClick={e => e.stopPropagation()}
                             >
                               {linkMatch[1]}
                             </a>
@@ -195,7 +199,8 @@ export default function Chatbot() {
                               href={part}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className={cn("underline break-all decoration-2 underline-offset-2", msg.sender === "user" ? "text-white hover:text-white/80" : "text-primary hover:text-primary/80")}
+                              className={cn("underline break-all decoration-2 underline-offset-2 transition-colors inline-block", msg.sender === "user" ? "text-white hover:text-white/80" : "text-primary hover:text-primary/80")}
+                              onClick={e => e.stopPropagation()}
                             >
                               {part}
                             </a>
@@ -260,7 +265,7 @@ export default function Chatbot() {
               }
             : { y: 0 }
         }
-        className={cn("w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-61 relative transition-all duration-300", isOpen ? "bg-white text-gray-600 border border-gray-100 hidden sm:flex" : "bg-primary text-white flex")}
+        className={cn("w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-[61] relative transition-all duration-300", isOpen ? "bg-white text-gray-600 border border-gray-100 hidden sm:flex" : "bg-primary text-white flex")}
       >
         <AnimatePresence mode="wait">
           <motion.div key={isOpen ? "close" : "open"} initial={{ opacity: 0, rotate: -90, scale: 0.5 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} exit={{ opacity: 0, rotate: 90, scale: 0.5 }} transition={{ duration: 0.2 }}>
