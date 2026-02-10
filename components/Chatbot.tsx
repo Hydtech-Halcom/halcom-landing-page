@@ -171,9 +171,38 @@ export default function Chatbot() {
                     </motion.div>
                     <motion.div
                       layoutId={`msg-${index}`}
-                      className={cn("px-4 py-2.5 rounded-2xl text-sm shadow-sm", msg.sender === "user" ? "bg-primary text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none")}
+                      className={cn("px-4 py-2.5 rounded-2xl text-sm shadow-sm whitespace-pre-wrap", msg.sender === "user" ? "bg-primary text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none")}
                     >
-                      {msg.text}
+                      {msg.text.split(/(\[.*?\]\(.*?\)|https?:\/\/[^\s]+)/g).map((part, i) => {
+                        const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+                        if (linkMatch) {
+                          return (
+                            <a
+                              key={i}
+                              href={linkMatch[2]}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={cn("underline font-bold decoration-2 underline-offset-2", msg.sender === "user" ? "text-white hover:text-white/80" : "text-primary hover:text-primary/80")}
+                            >
+                              {linkMatch[1]}
+                            </a>
+                          );
+                        }
+                        if (part.match(/^https?:\/\/[^\s]+$/)) {
+                          return (
+                            <a
+                              key={i}
+                              href={part}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={cn("underline break-all decoration-2 underline-offset-2", msg.sender === "user" ? "text-white hover:text-white/80" : "text-primary hover:text-primary/80")}
+                            >
+                              {part}
+                            </a>
+                          );
+                        }
+                        return part;
+                      })}
                     </motion.div>
                   </div>
                   <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[10px] text-gray-400 mt-1 px-10">

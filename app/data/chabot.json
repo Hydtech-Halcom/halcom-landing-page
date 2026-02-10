@@ -71,6 +71,78 @@
     {
       "context": ["vision", "mission", "visi", "misi"],
       "answer": "Our Vision is to be a leading IT company providing professional solutions. Our Mission includes developing competitive IT products, providing elite service, and promoting innovation and professionalism."
+    },
+    {
+      "context": ["apa itu halcom", "mengenai halcom", "siapa halcom", "halcom itu apa"],
+      "answer": "Halcom adalah perusahaan IT Infrastructure Specialist yang menyediakan solusi data center, networking, server & storage, security, wireless, audio visual, dan perangkat IT lainnya untuk kebutuhan perusahaan/ instansi anda."
+    },
+    {
+      "context": ["target customer", "melayani siapa", "b2b", "individu", "perusahaan", "instansi"],
+      "answer": "Kami fokus melayani perusahaan swasta (B2B), BUMN/ BUMD, instansi pemerintah, dan institusi."
+    },
+    {
+      "context": ["skala proyek", "proyek besar", "enterprise level", "multi-site", "proyek nasional"],
+      "answer": "Ya. Kami menangani proyek skala kecil hingga besar, termasuk multi-site dan enterprise-level infrastructure."
+    },
+    {
+      "context": ["inaproc", "e-katalog", "katalog lkpp", "e-procurement", "cara beli lewat inaproc"],
+      "answer": "Bisa. Halcom terdaftar dan dapat melayani transaksi melalui INAPROC pemerintah. Berikut untuk katalog kami:\n\n○ [Halcom Inovasi Teknologi](https://katalog.inaproc.id/halcom-inovasi-teknologi)\n○ [Halcom Integrated Solution](https://katalog.inaproc.id/halcom-integrated-solution)"
+    },
+    {
+      "context": ["tender", "lelang", "ikut tender", "proses tender"],
+      "answer": "Ya, kami dapat mengikuti proses tender sesuai ketentuan yang berlaku."
+    },
+    {
+      "context": ["pembelian langsung", "direct purchase", "non-inaproc", "beli langsung"],
+      "answer": "Bisa, untuk kebutuhan perusahaan swasta atau skema pembelian langsung."
+    },
+    {
+      "context": ["produk halcom", "apa saja produknya", "daftar produk", "list produk"],
+      "answer": "Kami menyediakan multi-solusi server, storage, networking, data center, security system, wireless, client computing, dan audio visual."
+    },
+    {
+      "context": ["request brand", "spesifikasi tertentu", "custom spec", "bisa pilih merk"],
+      "answer": "Bisa. Tim kami akan menyesuaikan solusi dengan kebutuhan dan budget Anda."
+    },
+    {
+      "context": ["jasa atau produk", "hanya jual barang", "layanan jasa", "scope of work"],
+      "answer": "Kami menyediakan produk sekaligus jasa, termasuk desain solusi, instalasi, konfigurasi, hingga support after sales."
+    },
+    {
+      "context": ["instalasi", "konfigurasi", "testing", "commissioning", "siap pakai"],
+      "answer": "Ya, layanan kami dapat mencakup instalasi, konfigurasi, testing, dan commissioning."
+    },
+    {
+      "context": ["maintenance", "support after sales", "layanan purna jual", "perbaikan"],
+      "answer": "Ada. Kami menyediakan layanan after-sales support and maintenance sesuai kebutuhan anda."
+    },
+    {
+      "context": ["penawaran harga", "quotation", "minta penawaran", "cara order"],
+      "answer": "Silakan sampaikan kebutuhan Anda melalui chat ini atau hubungi tim sales kami. Kami akan menyiapkan penawaran resmi."
+    },
+    {
+      "context": ["lama penawaran", "proses penawaran", "estimasi waktu penawaran"],
+      "answer": "Umumnya 1-3 hari kerja, tergantung kompleksitas kebutuhan."
+    },
+    {
+      "context": ["lama pengiriman", "waktu kirim", "pengiriman barang"],
+      "answer": "Waktu pengiriman tergantung pada jenis produk dan ketersediaan stok. Apabila barang ready, maka pengiriman umumnya 3-5 hari kerja."
+    },
+    {
+      "context": ["luar kota", "seluruh indonesia", "kirim keluar kota", "cakupan pengiriman"],
+      "answer": "Bisa. Kami melayani pengiriman ke seluruh Indonesia."
+    },
+    {
+      "context": ["dokumen legal", "legalitas", "npwp", "siup", "dokumen perusahaan"],
+      "answer": "Ya. Kami memiliki dokumen legal dan administrasi perusahaan yang lengkap dan valid. Hubungi tim kami untuk kebutuhan dokumen legalitas perusahaan."
+    },
+    {
+      "context": ["skema kontrak", "project based", "kerja sama kontrak"],
+      "answer": "Bisa. Kami terbuka untuk kerja sama berbasis kontrak maupun project-based."
+    },
+    {
+      "context": ["bicara dengan admin", "hubungi sales", "bicara orang", "human handover", "tinggalkan kontak", "customer service"],
+      "answer": "Tentu. Silakan tinggalkan kontak Anda, tim kami akan segera menghubungi Anda."
     }
   ]
 }
