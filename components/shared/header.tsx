@@ -5,12 +5,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Listen for chatbot toggle event
+  useEffect(() => {
+    const handleChatbotToggle = (e: any) => {
+      setIsChatbotOpen(e.detail.isOpen);
+    };
+
+    window.addEventListener("chatbotToggle", handleChatbotToggle);
+    return () => window.removeEventListener("chatbotToggle", handleChatbotToggle);
+  }, []);
 
   // Data untuk item navbar
   const navItems = [
@@ -114,7 +126,7 @@ export default function Header() {
   };
 
   return (
-    <div className="relative w-full">
+    <div className={cn("relative w-full transition-all duration-300", isChatbotOpen ? "sm:block hidden" : "block")}>
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>

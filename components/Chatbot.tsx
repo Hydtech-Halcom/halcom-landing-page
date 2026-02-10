@@ -70,6 +70,11 @@ export default function Chatbot() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Dispatch custom event to notify other components (like Navbar)
+    window.dispatchEvent(new CustomEvent("chatbotToggle", { detail: { isOpen } }));
+  }, [isOpen]);
+
+  useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
         top: scrollRef.current.scrollHeight,
