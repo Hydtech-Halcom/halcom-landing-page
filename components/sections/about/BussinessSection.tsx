@@ -96,14 +96,14 @@ export function BussinessSection() {
           </div>
 
           <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {/* ✅ DESKTOP VERSION */}
+            {/* DESKTOP VERSION */}
             <div className="hidden lg:contents">
               {cardsData.map(card => (
                 <FlippingCard key={card.id} height={420} frontContent={<GenericCardFront data={card.front} />} backContent={<GenericCardBack data={card.back} />} />
               ))}
             </div>
 
-            {/* ✅ MOBILE & TABLET VERSION */}
+            {/* MOBILE & TABLET VERSION */}
             <div className="lg:hidden contents">
               {cardsData.map(card => (
                 <MobileBusinessCard key={card.id} data={card} />
