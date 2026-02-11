@@ -128,7 +128,7 @@ export default function Chatbot() {
   };
 
   return (
-    <div className={cn("fixed z-9999 transition-all duration-300 flex flex-col items-end", isOpen ? "inset-0 sm:inset-auto sm:bottom-8 sm:right-8" : "bottom-6 right-6 sm:bottom-8 sm:right-8")}>
+    <div className={cn("fixed z-100 transition-all duration-300 flex flex-col items-end", isOpen ? "inset-0 sm:inset-auto sm:bottom-8 sm:right-8" : "bottom-6 right-6 sm:bottom-8 sm:right-8")}>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -180,7 +180,7 @@ export default function Chatbot() {
                     <motion.div
                       layoutId={`msg-${index}`}
                       className={cn(
-                        "px-4 py-2.5 rounded-2xl text-sm shadow-sm whitespace-pre-wrap wrap-break-word",
+                        "px-4 py-2.5 rounded-2xl text-sm shadow-sm whitespace-pre-wrap break-words",
                         msg.sender === "user" ? "bg-primary text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none"
                       )}
                     >

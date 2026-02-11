@@ -3,13 +3,12 @@
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, ChevronRight, Clock, Filter, MapPin, Search } from "lucide-react";
+import { Calendar, ChevronRight, Clock, Filter, MapPin, Search } from "lucide-react";
 import { useState } from "react";
 import { events } from "@/lib/constants/events";
-import { containerVariants, fadeInUp, itemVariants } from "@/lib/animations";
+import { containerVariants, itemVariants } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import PageHero from "@/components/shared/PageHero";
 
