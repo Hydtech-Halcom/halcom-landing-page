@@ -128,7 +128,7 @@ export default function Chatbot() {
   };
 
   return (
-    <div className={cn("fixed z-[60] transition-all duration-300 flex flex-col items-end", isOpen ? "inset-0 sm:inset-auto sm:bottom-8 sm:right-8" : "bottom-6 right-6 sm:bottom-8 sm:right-8")}>
+    <div className={cn("fixed z-9999 transition-all duration-300 flex flex-col items-end", isOpen ? "inset-0 sm:inset-auto sm:bottom-8 sm:right-8" : "bottom-6 right-6 sm:bottom-8 sm:right-8")}>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -136,7 +136,10 @@ export default function Chatbot() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className={cn("bg-white shadow-2xl overflow-hidden border border-gray-100 flex flex-col transition-all duration-300 pointer-events-auto", "w-full h-full sm:h-[600px] sm:w-100 sm:rounded-2xl sm:mb-4 sm:border")}
+            className={cn(
+              "bg-white shadow-2xl overflow-hidden border border-gray-100 flex flex-col transition-all duration-300 pointer-events-auto",
+              "w-full h-dvh sm:h-[min(85dvh,500px)] sm:w-[min(95vw,380px)] sm:rounded-2xl sm:mb-1 sm:border"
+            )}
           >
             {/* Header */}
             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="bg-primary p-4 text-white flex justify-between items-center bg-linear-to-r from-primary to-primary/80 shrink-0">
@@ -177,8 +180,8 @@ export default function Chatbot() {
                     <motion.div
                       layoutId={`msg-${index}`}
                       className={cn(
-                        "px-4 py-2.5 rounded-2xl text-sm shadow-sm whitespace-pre-wrap break-words",
-                        msg.sender === "user" ? "bg-primary text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none",
+                        "px-4 py-2.5 rounded-2xl text-sm shadow-sm whitespace-pre-wrap wrap-break-word",
+                        msg.sender === "user" ? "bg-primary text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none"
                       )}
                     >
                       {msg.text.split(/(\[.*?\]\(.*?\)|https?:\/\/[^\s]+(?=[^.,:;?!)]|$))/g).map((part, i) => {
@@ -270,7 +273,7 @@ export default function Chatbot() {
               }
             : { y: 0 }
         }
-        className={cn("w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-[61] relative transition-all duration-300", isOpen ? "bg-white text-gray-600 border border-gray-100 hidden sm:flex" : "bg-primary text-white flex")}
+        className={cn("w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-61 relative transition-all duration-300", isOpen ? "bg-white text-gray-600 border border-gray-100 hidden sm:flex" : "bg-primary text-white flex")}
       >
         <AnimatePresence mode="wait">
           <motion.div key={isOpen ? "close" : "open"} initial={{ opacity: 0, rotate: -90, scale: 0.5 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} exit={{ opacity: 0, rotate: 90, scale: 0.5 }} transition={{ duration: 0.2 }}>
@@ -278,7 +281,6 @@ export default function Chatbot() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Unread dot if closed with pulse effect */}
         {!isOpen && (
           <span className="absolute top-0 right-0 flex h-4 w-4">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
