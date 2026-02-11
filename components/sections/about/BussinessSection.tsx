@@ -1,8 +1,20 @@
-import { Content } from "../content";
-import Link from "next/link";
-import { InteractiveHoverButton } from "@/components/shared/interactive-button";
+"use client";
 
+import { Content } from "../content";
 import { FlippingCard } from "@/components/shared/flipping-card";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+
+interface MobileBusinessCardProps {
+  data: CardData;
+}
+interface GenericCardFrontProps {
+  data: CardData["front"];
+}
+
+interface GenericCardBackProps {
+  data: CardData["back"];
+}
 
 interface CardData {
   id: string;
@@ -84,18 +96,24 @@ export function BussinessSection() {
           </div>
 
           <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {cardsData.map(card => (
-              <FlippingCard key={card.id} height={420} frontContent={<GenericCardFront data={card.front} />} backContent={<GenericCardBack data={card.back} />} />
-            ))}
+            {/* ✅ DESKTOP VERSION */}
+            <div className="hidden lg:contents">
+              {cardsData.map(card => (
+                <FlippingCard key={card.id} height={420} frontContent={<GenericCardFront data={card.front} />} backContent={<GenericCardBack data={card.back} />} />
+              ))}
+            </div>
+
+            {/* ✅ MOBILE & TABLET VERSION */}
+            <div className="lg:hidden contents">
+              {cardsData.map(card => (
+                <MobileBusinessCard key={card.id} data={card} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
     </Content>
   );
-}
-
-interface GenericCardFrontProps {
-  data: CardData["front"];
 }
 
 function GenericCardFront({ data }: GenericCardFrontProps) {
@@ -116,14 +134,45 @@ function GenericCardFront({ data }: GenericCardFrontProps) {
   );
 }
 
-interface GenericCardBackProps {
-  data: CardData["back"];
-}
-
 function GenericCardBack({ data }: GenericCardBackProps) {
   return (
     <div className="flex flex-col items-center justify-center h-full w-full p-6">
       <p className="text-[18px] mt-2 text-muted-foreground text-center">{data.description}</p>
+    </div>
+  );
+}
+
+function MobileBusinessCard({ data }: MobileBusinessCardProps) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="rounded-xl overflow-hidden border bg-card shadow-sm transition-all duration-300">
+      {/* IMAGE */}
+      <div className="relative h-48">
+        <img src={data.front.imageSrc} alt={data.front.imageAlt} className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+        <div className="relative z-10 p-4 flex items-end h-full">
+          <h3 className="text-white text-lg font-semibold">{data.front.title}</h3>
+        </div>
+      </div>
+
+      {/* CONTENT */}
+      <div className="p-4">
+        <p className="text-sm text-muted-foreground">{data.front.description}</p>
+
+        {/* EXPAND BUTTON */}
+        <button onClick={() => setOpen(!open)} className="flex items-center gap-2 mt-4 text-primary font-medium text-sm">
+          {open ? "Hide Details" : "View Details"}
+          <ChevronDown className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} />
+        </button>
+
+        {/* EXPANDED SECTION */}
+        <div className={`grid transition-all duration-300 ease-in-out ${open ? "grid-rows-[1fr] opacity-100 mt-3" : "grid-rows-[0fr] opacity-0"}`}>
+          <div className="overflow-hidden">
+            <p className="text-sm text-muted-foreground leading-relaxed">{data.back.description}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
