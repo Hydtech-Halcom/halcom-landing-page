@@ -33,8 +33,8 @@ const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
     columns[index % columnCount].push(logo);
   });
 
-  const maxLength = Math.max(...columns.map((col) => col.length));
-  columns.forEach((col) => {
+  const maxLength = Math.max(...columns.map(col => col.length));
+  columns.forEach(col => {
     while (col.length < maxLength) {
       col.push(shuffled[Math.floor(Math.random() * shuffled.length)]);
     }
@@ -58,38 +58,29 @@ const logoVariants = {
   },
 };
 
-const LogoColumn: React.FC<LogoColumnProps> = React.memo(
-  ({ logos, index, currentIndex }) => {
-    // Offset each column by its index
-    const adjustedIndex = (currentIndex + index) % logos.length;
-    const currentLogo = logos[adjustedIndex];
+const LogoColumn: React.FC<LogoColumnProps> = React.memo(({ logos, index, currentIndex }) => {
+  // Offset each column by its index
+  const adjustedIndex = (currentIndex + index) % logos.length;
+  const currentLogo = logos[adjustedIndex];
 
-    return (
-      <div className="relative h-14 w-24 overflow-hidden md:h-24 md:w-48">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentLogo.id}
-            className="absolute inset-0 flex items-center justify-center"
-            variants={logoVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
-            <Image
-              src={currentLogo.img}
-              alt={currentLogo.name}
-              width={128}
-              height={128}
-              className="h-20 w-20 max-h-[80%] max-w-[80%] object-contain md:h-32 md:w-32"
-              loading="lazy"
-              unoptimized // Skip Next.js optimization for SVGs
-            />
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    );
-  },
-);
+  return (
+    <div className="relative h-14 w-20 sm:w-24 md:w-32 lg:w-40 overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div key={currentLogo.id} className="absolute inset-0 flex items-center justify-center" variants={logoVariants} initial="initial" animate="animate" exit="exit">
+          <Image
+            src={currentLogo.img}
+            alt={currentLogo.name}
+            width={128}
+            height={128}
+            className="h-20 w-20 max-h-[80%] max-w-[80%] object-contain md:h-32 md:w-32"
+            loading="lazy"
+            unoptimized // Skip Next.js optimization for SVGs
+          />
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+});
 
 LogoColumn.displayName = "LogoColumn";
 
@@ -102,30 +93,22 @@ export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Memoize logo distribution to prevent recalculation
-  const logoSets = useMemo(
-    () => distributeLogos(logos, columnCount),
-    [logos, columnCount],
-  );
+  const logoSets = useMemo(() => distributeLogos(logos, columnCount), [logos, columnCount]);
 
   // Update index every 3 seconds instead of tracking time every 100ms
   useEffect(() => {
-    const maxLength = Math.max(...logoSets.map((col) => col.length));
+    const maxLength = Math.max(...logoSets.map(col => col.length));
     const intervalId = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % maxLength);
+      setCurrentIndex(prev => (prev + 1) % maxLength);
     }, 3000); // Changed from 100ms to 3000ms
 
     return () => clearInterval(intervalId);
   }, [logoSets]);
 
   return (
-    <div className="flex space-x-4">
+    <div className="flex flex-wrap justify-center gap-4">
       {logoSets.map((columnLogos, index) => (
-        <LogoColumn
-          key={index}
-          logos={columnLogos}
-          index={index}
-          currentIndex={currentIndex}
-        />
+        <LogoColumn key={index} logos={columnLogos} index={index} currentIndex={currentIndex} />
       ))}
     </div>
   );

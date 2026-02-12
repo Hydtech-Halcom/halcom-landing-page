@@ -10,10 +10,7 @@ const TechnologyPartnerSection = () => {
           <GradientHeading size="lg" weight="bold">
             Technology Partner
           </GradientHeading>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            We work with various trusted partners to provide the best solutions
-            for our clients.
-          </p>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">We work with various trusted partners to provide the best solutions for our clients.</p>
         </div>
 
         <div className="flex justify-center">
