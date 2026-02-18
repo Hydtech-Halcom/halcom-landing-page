@@ -38,8 +38,8 @@ export default function Achievements() {
     },
     {
       image: "/assets/achievement/Best of Growth for IT Solution CAwardedPTSynnexMetrodataIndonesia.jpg",
-      label: "Awarded by PT Tech Data Advanced (2021)",
-      description: "Top Enterprise Partner - Geo X Partner Award FY21",
+      label: "Awarded by PT Synnex Metrodata Indonesia (2021)",
+      description: "Best of Growth for IT Solutions Award",
     },
   ];
 
