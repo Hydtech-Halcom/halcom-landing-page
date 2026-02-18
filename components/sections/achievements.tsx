@@ -26,6 +26,21 @@ export default function Achievements() {
       label: "Sertifikat PLN",
       description: "PLN Certification Achievement",
     },
+    {
+      image: "/assets/achievement/AwardedbyCiscoIndonesia.jpg",
+      label: "PT Cisco (2016)",
+      description: "FY16 Rookie Parner of the Year - Cisco Indonesia",
+    },
+    {
+      image: "/assets/achievement/AwardedbyPTTechDataAdvanced.jpg",
+      label: "Awarded by PT Tech Data Advanced (2021)",
+      description: "Top Enterprise Partner - Geo X Partner Award FY21",
+    },
+    {
+      image: "/assets/achievement/Best of Growth for IT Solution CAwardedPTSynnexMetrodataIndonesia.jpg",
+      label: "Awarded by PT Tech Data Advanced (2021)",
+      description: "Top Enterprise Partner - Geo X Partner Award FY21",
+    },
   ];
 
   return (
