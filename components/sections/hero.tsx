@@ -57,7 +57,7 @@ export default function Hero() {
             <motion.div className="grid grid-cols-3 gap-4 sm:gap-8 pt-6 sm:pt-12 border-t border-border/50 mt-4 sm:mt-8" variants={itemVariants}>
               {[
                 { number: 20, suffix: "+", label: "Years Experience", useGrouping: true },
-                { number: 200, suffix: "+", label: "Projects Completed", useGrouping: true },
+                { number: 500, suffix: "+", label: "Projects Completed", useGrouping: true },
                 { number: 2003, suffix: "", label: "Since Founded", useGrouping: false },
               ].map((stat, index) => (
                 <motion.div key={index} whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
