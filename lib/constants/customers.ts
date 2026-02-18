@@ -50,7 +50,7 @@ export const CUSTOMER_LOGOS: CustomerLogo[] = [
   { id: 21, name: "Patria", img: "/images/customers/patria-logo.jpg" },
   { id: 22, name: "PLN Batam", img: "/images/customers/pln-batam-logo.png" },
   { id: 23, name: "Ria Bintan", img: "/images/customers/ria-bintan-logo.png" },
-  { id: 24, name: "TikTok", img: "/images/customers/tiktok-logo.svg" },
+  { id: 24, name: "ByteDance", img: "/images/customers/byte-dance-logo.png" },
   {
     id: 25,
     name: "Treasure Bay",

@@ -22,7 +22,7 @@ export default function StrategicPartnershipSection() {
             Strategic Partnership
           </GradientHeading>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            <span className="font-semibold text-foreground">Halcom</span> has
+            Halcom has
             reached various levels of strategic partnership with leading
             technology principals, reflecting our strong commitment to
             collaboration and excellence.
