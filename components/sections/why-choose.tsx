@@ -17,12 +17,6 @@ export default function WhyChoose() {
       image: "/assets/why-choose/team.jpg",
     },
     {
-      icon: IconTrendingUp,
-      title: "Bank-Backed",
-      description: "Fund supported by international bank HSBC and national bank Mandiri for financial stability.",
-      image: "/assets/why-choose/bank-backed.jpg",
-    },
-    {
       icon: IconStar,
       title: "Strategic Partnerships",
       description: "Strategic partnership with global players in IT industry for cutting-edge solutions.",
@@ -47,11 +41,11 @@ export default function WhyChoose() {
           <TextAnimate animation="blurIn" as="h2" className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Why Choose Us
           </TextAnimate>
-          <p className="text-lg text-foreground-secondary max-w-2xl mx-auto">Discover what makes Halcom the trusted partner for IT Infrastructure solutions</p>
+          <p className="text-lg text-foreground-secondary max-w-2xl mx-auto">Discover why Halcom is the right partner for your IT infrastructure solutions</p>
         </div>
 
         {/* Reasons Grid */}
-        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (

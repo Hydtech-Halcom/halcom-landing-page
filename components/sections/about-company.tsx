@@ -13,9 +13,8 @@ export default function AboutCompany() {
   const highlights = [
     "Management with 20+ years IT and M&E experience",
     "Expert and certified professional teams",
-    "Bank-backed by HSBC and Mandiri",
     "Strategic partnerships with global IT leaders",
-    "Proven track record of 200+ successful projects",
+    "Proven track record of 500+ successful projects",
     "Total solutions with seamless implementation",
   ];
 
@@ -41,7 +40,7 @@ export default function AboutCompany() {
             <motion.div className="space-y-4" variants={itemVariants}>
               <p className="text-lg sm:text-xl text-foreground-secondary leading-relaxed">
                 Halcom has been established since <span className="font-semibold text-primary">2003</span> with full commitment to provide the best IT solutions for our clients. We have successfully completed{" "}
-                <span className="font-semibold text-primary">200+ projects</span> with various company backgrounds.
+                <span className="font-semibold text-primary">500+ projects</span> with various company backgrounds.
               </p>
 
               <p className="text-base sm:text-lg text-foreground-secondary leading-relaxed">

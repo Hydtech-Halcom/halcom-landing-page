@@ -60,12 +60,6 @@ export default function Footer() {
                 </motion.a>
               ))}
             </div>
-
-            <p className="text-gray-300 text-sm text-left lg:text-right">
-              {CONTACT_INFO.phone}
-              <br />
-              {CONTACT_INFO.email}
-            </p>
           </div>
         </div>
       </div>

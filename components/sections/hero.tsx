@@ -26,12 +26,13 @@ export default function Hero() {
                 <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">Welcome to Halcom</p>
               </motion.div>
 
-              <motion.h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-                Complete IT Infrastructure <span className="text-primary">Solutions</span>
+              <motion.h1 className="text-xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight">
+                Complete <br /> IT Infrastructure & Industrial <br /> <span className="text-primary">Solutions</span>
               </motion.h1>
 
               <motion.p className="text-base sm:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                Halcom is an IT Infrastructure Specialist determined to provide total solutions to our clients with 20+ years of experience and expert certified teams.
+                Halcom is a System Integrator providing end-to-end IT infrastructure, mechanical & electrical systems, industrial automation, and audio visual solutions. With over 20 years of experience and certified professionals, we build
+                integrated technology environments that support performance, efficiency, and long-term reliability
               </motion.p>
             </motion.div>
 
@@ -56,7 +57,7 @@ export default function Hero() {
             <motion.div className="grid grid-cols-3 gap-4 sm:gap-8 pt-6 sm:pt-12 border-t border-border/50 mt-4 sm:mt-8" variants={itemVariants}>
               {[
                 { number: 20, suffix: "+", label: "Years Experience", useGrouping: true },
-                { number: 200, suffix: "+", label: "Projects Completed", useGrouping: true },
+                { number: 500, suffix: "+", label: "Projects Completed", useGrouping: true },
                 { number: 2003, suffix: "", label: "Since Founded", useGrouping: false },
               ].map((stat, index) => (
                 <motion.div key={index} whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
