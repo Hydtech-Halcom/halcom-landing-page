@@ -1,13 +1,13 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Acara & Kegiatan",
+  title: "Events & Activities",
   description:
-    "Ikuti seminar, workshop, dan forum eksklusif Halcom untuk tetap update dengan teknologi terkini dan peluang bisnis.",
+    "Join Halcom's exclusive seminars, workshops, and forums to stay up to date with the latest technology and business opportunities.",
   openGraph: {
-    title: "Acara & Kegiatan | Halcom",
+    title: "Events & Activities | Halcom",
     description:
-      "Ikuti seminar, workshop, dan forum eksklusif Halcom untuk teknologi terkini.",
+      "Join Halcom's exclusive seminars, workshops, and forums on the latest technology.",
   },
 };
 

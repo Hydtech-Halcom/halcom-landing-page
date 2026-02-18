@@ -29,7 +29,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
       month: "long",
       year: "numeric",
     };
-    return date.toLocaleDateString("id-ID", options);
+    return date.toLocaleDateString("en-US", options);
   };
 
   // Siapkan data gambar untuk carousel
@@ -64,7 +64,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
 
           {/* Image Gallery dengan Carousel */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold">Galeri Acara</h2>
+            <h2 className="text-2xl font-semibold">Event Gallery</h2>
             <ThumbnailsCarousel images={carouselImages} />
           </section>
 
@@ -72,7 +72,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Deskripsi */}
             <div className="lg:col-span-2 space-y-4">
-              <h2 className="text-2xl font-semibold">Deskripsi Lengkap</h2>
+              <h2 className="text-2xl font-semibold">Full Description</h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{event.description}</p>
               </div>
@@ -80,7 +80,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
 
             {/* Event Info - Di sebelah deskripsi */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-semibold">Detail Acara</h2>
+              <h2 className="text-2xl font-semibold">Event Details</h2>
               <Card>
                 <CardContent className="p-6 space-y-6">
                   <div className="space-y-4">
@@ -89,7 +89,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                         <Calendar className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium">Tanggal</p>
+                        <p className="font-medium">Date</p>
                         <p className="text-muted-foreground">{formatDate(event.date)}</p>
                       </div>
                     </div>
@@ -99,7 +99,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                         <Clock className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium">Waktu</p>
+                        <p className="font-medium">Time</p>
                         <p className="text-muted-foreground">{event.time}</p>
                       </div>
                     </div>
@@ -109,7 +109,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                         <MapPin className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium">Lokasi</p>
+                        <p className="font-medium">Location</p>
                         <p className="text-muted-foreground">{event.location}</p>
                       </div>
                     </div>

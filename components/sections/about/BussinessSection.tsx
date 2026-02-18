@@ -1,6 +1,7 @@
 "use client";
 
 import { Content } from "../content";
+import { motion } from "framer-motion";
 import { FlippingCard } from "@/components/shared/flipping-card";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
@@ -40,7 +41,7 @@ const cardsData: CardData[] = [
       description: "Halcom focused on main line of business as an IT Infrastructure Specialist.",
     },
     back: {
-      description: "We are giving an optimal solution for your needs. We are providing IT hardware and software, also professional services including project management, installation, testing and training.",
+      description: "We provide IT hardware and software solutions along with professional services including project management, installation, testing, and training to support stable and efficient system operations.",
       buttonText: "View Portfolio",
     },
   },
@@ -50,10 +51,10 @@ const cardsData: CardData[] = [
       imageSrc: "/assets/images/mechanic.jpeg",
       imageAlt: "Industrial Automation",
       title: "Industrial Automation",
-      description: "Halcom offers automation solutions for your industry.",
+      description: "Halcom operates in Industrial and IoT systems including building automation, factory automation, and system integration.",
     },
     back: {
-      description: "The solution provided by halcom makes it possible to transform from a manual process or semi-automatic process into a complete set of automated processes. 5o you can get efficient results.",
+      description: "Our Industrial and IoT activities cover Building Automation Systems, Factory Automation, Robotic Applications, and integrated monitoring and control platforms for commercial and industrial environments. ",
       buttonText: "Learn More",
     },
   },
@@ -63,7 +64,7 @@ const cardsData: CardData[] = [
       imageSrc: "/assets/images/electrical.jpg",
       imageAlt: "Mechanical & Electrical",
       title: "Mechanical & Electrical",
-      description: "Halcom provides design mechanical and electrical needed.",
+      description: "Halcom operates in mechanical and electrical works, supporting facility and infrastructure requirements.",
     },
     back: {
       description: "Halcom provides design, supervise and installation of electrical and mechanical works at various facilities such as office buildings, hotels, airport, and manufacturing.",
@@ -76,10 +77,10 @@ const cardsData: CardData[] = [
       imageSrc: "/assets/images/service.jpg",
       imageAlt: "Managed Services",
       title: "Managed Services",
-      description: "Halcom provides managed services and preventive maintenance of your IT infrastructure.",
+      description: "Halcom delivers managed services and maintenance support for IT infrastructure operations.",
     },
     back: {
-      description: "Halcom provides managed services and preventive maintenance of your IT infrastructure.",
+      description: "Our managed services include preventive and corrective maintenance, NOC/SOC support, and SLA-based operational coverage to ensure system stability and continuity.",
       buttonText: "Learn More",
     },
   },
@@ -91,8 +92,10 @@ export function BussinessSection() {
       <section className="max-w-7xl mx-auto py-20">
         <div className="grid md:grid-cols-2 gap-6 items-start">
           <div className="col-span-2">
-            <span className="inline-block px-4 py-1.5 text-primary font-semibold tracking-widest text-sm bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-full">• LINE OF BUSSINESS</span>
-            <h2 className="text-3xl font-bold leading-tight mt-4">IT Infrastructure Specialist, Managed Services, Mechanical & Electrical and Industrial Automation.</h2>
+            {/* <span className="inline-block px-4 py-1.5 text-primary font-semibold tracking-widest text-sm bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-full">OUR LINE OF BUSINESS</span> */}
+            <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-4xl font-light tracking-tight text-neutral-800 dark:text-white uppercase text-center">
+              Our <span className="font-bold text-primary">Line of Business</span>
+            </motion.h2>
           </div>
 
           <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
