@@ -26,12 +26,13 @@ export default function Hero() {
                 <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">Welcome to Halcom</p>
               </motion.div>
 
-              <motion.h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-                Complete IT Infrastructure <span className="text-primary">Solutions</span>
+              <motion.h1 className="text-xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight">
+                Complete <br /> IT Infrastructure & Industrial <br /> <span className="text-primary">Solutions</span>
               </motion.h1>
 
               <motion.p className="text-base sm:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                Halcom is an IT Infrastructure Specialist determined to provide total solutions to our clients with 20+ years of experience and expert certified teams.
+                Halcom is a System Integrator providing end-to-end IT infrastructure, mechanical & electrical systems, industrial automation, and audio visual solutions. With over 20 years of experience and certified professionals, we build
+                integrated technology environments that support performance, efficiency, and long-term reliability
               </motion.p>
             </motion.div>
 
