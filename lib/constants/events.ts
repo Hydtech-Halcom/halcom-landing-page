@@ -20,8 +20,8 @@ export const events: Event[] = [
     title:
       "Forum Komunikasi Pengelola Pengadaan Barang/Jasa dan Business Matching dalam Rangka Hari Jadi IFPI Ke-9 Tahun 2025",
     description:
-      "Forum komunikasi dan business matching yang diselenggarakan dalam rangka memperingati Hari Jadi IFPI ke-9. Acara ini bertujuan untuk memperkuat jaringan antara pengelola pengadaan barang/jasa dengan vendor serta menciptakan peluang kolaborasi bisnis.",
-    shortDescription: "Forum Komunikasi dan Business Matching IFPI ke-9",
+      " A communication forum and business matching event organized to commemorate the 9th Anniversary of IFPI. The event aims to strengthen networks between procurement management professionals and vendors, as well as create opportunities for business collaboration.",
+    shortDescription: "9th IFPI Communication and Business Matching Forum",
     date: "2025-04-24",
     time: "09:00 - 17:00 WIB",
     location: "Harris Hotel Batam",
@@ -51,8 +51,8 @@ export const events: Event[] = [
     title:
       "Epson Solution for Innovation & Empowerment: 'Mendorong Inovasi, Solusi, dan Pemberdayaan Digital di Sumatera Barat'",
     description:
-      "Seminar dan showcase solusi Epson untuk mendorong inovasi digital di Sumatera Barat. Acara ini menampilkan teknologi terkini dari Epson dan bagaimana solusi tersebut dapat memberdayakan digitalisasi di berbagai sektor.",
-    shortDescription: "Showcase Solusi Inovasi Digital Epson",
+      "A seminar and solution showcase by Epson aimed at driving innovation and digital transformation in Sumatera Barat. The event featured Epson’s latest technologies and solutions, highlighting how they can support government initiatives across various sectors.",
+    shortDescription: "Epson Digital Innovation Solutions Showcase",
     date: "2025-09-30",
     time: "10:00 - 15:00 WIB",
     location: "Hotel Santika Premiere Padang",
@@ -79,8 +79,8 @@ export const events: Event[] = [
     title:
       "Product Knowledge Session: Smart Campus Empowerment - 'Future-Ready Campus, Smarter Generation'",
     description:
-      "Sesi pengetahuan produk yang berfokus pada solusi smart campus untuk perguruan tinggi. Acara ini membahas teknologi yang dapat mengubah kampus menjadi lingkungan pembelajaran yang lebih cerdas dan efisien.",
-    shortDescription: "Sesi Pengetahuan Produk Solusi Smart Campus",
+      "A product knowledge session focused on smart campus solutions for higher education institutions. The event discussed technologies that support the development of smarter and more efficient learning environments using Huawei and Hikvision products.",
+    shortDescription: "Smart Campus Solution Product Knowledge Session",
     date: "2025-08-28",
     time: "13:00 - 16:00 WIB",
     location: "UNP Hotel & Convention Center",

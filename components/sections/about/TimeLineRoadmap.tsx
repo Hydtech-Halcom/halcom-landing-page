@@ -35,7 +35,7 @@ export default function TimeLineRoadmap() {
   };
 
   return (
-    <section ref={containerRef} className="relative py-16 md:py-20 lg:py-32 bg-white dark:bg-neutral-950 transition-colors duration-500 overflow-hidden">
+    <section ref={containerRef} className="relative pt-16 md:py-20 lg:py-32 bg-white dark:bg-neutral-950 transition-colors duration-500 overflow-hidden">
       {/* Grid Pattern Background */}
       <div className="absolute inset-0 z-0">
         <GridPattern width={40} height={40} x={-1} y={-1} className={cn("mask-[radial-gradient(circle_at_30%_30%,white,transparent_80%)] opacity-50 dark:opacity-25")} />
@@ -46,7 +46,7 @@ export default function TimeLineRoadmap() {
       <div className="relative z-10">
         {/* Section Header */}
         <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4">
-          <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-neutral-800 dark:text-white uppercase">
+          <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-4xl font-light tracking-tight text-neutral-800 dark:text-white uppercase">
             Our <span className="font-bold text-primary">Journey</span>
           </motion.h2>
         </div>
@@ -168,9 +168,8 @@ export default function TimeLineRoadmap() {
                 key={idx}
                 onClick={() => goToSlide(idx)}
                 disabled={isAnimating}
-                className={`transition-all duration-300 disabled:cursor-not-allowed focus:outline-none ${
-                  idx === currentIndex ? "w-10 h-2 bg-primary rounded-full" : "w-2 h-2 bg-neutral-300 dark:bg-neutral-600 rounded-full hover:bg-neutral-400 dark:hover:bg-neutral-500"
-                }`}
+                className={`transition-all duration-300 disabled:cursor-not-allowed focus:outline-none ${idx === currentIndex ? "w-10 h-2 bg-primary rounded-full" : "w-2 h-2 bg-neutral-300 dark:bg-neutral-600 rounded-full hover:bg-neutral-400 dark:hover:bg-neutral-500"
+                  }`}
                 aria-label={`Go to milestone ${idx + 1}`}
               />
             ))}
