@@ -2,13 +2,11 @@ import { Metadata } from "next";
 import CustomerSection from "@/components/sections/customers/customer-section";
 
 export const metadata: Metadata = {
-  title: "Pelanggan",
-  description:
-    "Halcom telah dipercaya oleh berbagai perusahaan terkemuka di Indonesia untuk menyediakan solusi IT Infrastructure yang handal.",
+  title: "Customers",
+  description: "Halcom has been trusted by various leading companies in Indonesia to provide reliable IT Infrastructure solutions.",
   openGraph: {
-    title: "Pelanggan | Halcom",
-    description:
-      "Halcom telah dipercaya oleh berbagai perusahaan terkemuka di Indonesia.",
+    title: "Customers | Halcom",
+    description: "Halcom has been trusted by various leading companies in Indonesia.",
   },
 };
 

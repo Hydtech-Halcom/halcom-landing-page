@@ -72,4 +72,5 @@ export const CUSTOMER_LOGOS: CustomerLogo[] = [
     img: "/images/customers/unp-logo.png",
   },
   { id: 29, name: "VME", img: "/images/customers/vme-logo.jpeg" },
+  { id: 30, name: "ByteDance", img: "/images/customers/ByteDance_logo_English.png" },
 ];

@@ -5,11 +5,11 @@ import { AboutSection } from "@/components/sections/about/AboutSection";
 import TimelineRoadmap from "@/components/sections/about/TimeLineRoadmap";
 
 export const metadata: Metadata = {
-  title: "Tentang Kami",
-  description: "Halcom adalah IT Infrastructure Specialist yang berkomitmen memberikan solusi total kepada klien dengan pengalaman 20+ tahun dan tim bersertifikasi ahli.",
+  title: "About Us",
+  description: "Halcom is an IT Infrastructure Specialist committed to providing total solutions to clients with 20+ years of experience and a team of certified experts.",
   openGraph: {
-    title: "Tentang Kami | Halcom",
-    description: "Halcom adalah IT Infrastructure Specialist yang berkomitmen memberikan solusi total kepada klien dengan pengalaman 20+ tahun.",
+    title: "About Us | Halcom",
+    description: "Halcom is an IT Infrastructure Specialist committed to providing total solutions to clients with 20+ years of experience and a team of certified experts.",
   },
 };
 

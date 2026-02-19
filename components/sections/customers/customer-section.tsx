@@ -6,7 +6,7 @@ const CustomerSection = () => {
   // Split logos into 3 rows
   const row1Logos = CUSTOMER_LOGOS.slice(0, 10);
   const row2Logos = CUSTOMER_LOGOS.slice(10, 20);
-  const row3Logos = CUSTOMER_LOGOS.slice(20, 29);
+  const row3Logos = CUSTOMER_LOGOS.slice(20, 30);
 
   return (
     <section className="py-2 md:py-4">
@@ -15,11 +15,7 @@ const CustomerSection = () => {
           <GradientHeading size="lg" weight="bold">
             Our Valued Customers
           </GradientHeading>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Trusted by leading organizations across industries — from
-            multinational corporations and government institutions to growing
-            enterprises throughout Indonesia.
-          </p>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">Trusted by leading organizations across industries — from multinational corporations and government institutions to growing enterprises throughout Indonesia.</p>
         </div>
 
         <div className="flex flex-col items-center gap-8 overflow-x-hidden">

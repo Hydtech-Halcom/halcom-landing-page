@@ -3,11 +3,11 @@ import { PageHero } from "@/components/shared/PageHero";
 import { ProjectSection } from "@/components/sections/project/project-section";
 
 export const metadata: Metadata = {
-  title: "Proyek Kami",
-  description: "Jelajahi portofolio proyek sukses kami dan temukan bagaimana kami memberikan keunggulan melalui teknologi mutakhir dan keahlian yang berdedikasi.",
+  title: "Our Projects",
+  description: "Explore our portfolio of successful projects and discover how we deliver excellence through cutting-edge technology and dedicated expertise.",
   openGraph: {
-    title: "Proyek Kami | Halcom",
-    description: "Jelajahi portofolio proyek sukses kami dengan teknologi mutakhir dan keahlian yang berdedikasi.",
+    title: "Our Projects | Halcom",
+    description: "Explore our portfolio of successful projects with cutting-edge technology and dedicated expertise.",
   },
 };
 

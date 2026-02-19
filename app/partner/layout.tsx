@@ -2,19 +2,13 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Partner",
-  description:
-    "Halcom bermitra dengan vendor teknologi terkemuka dunia untuk menyediakan solusi IT Infrastructure terbaik kepada klien kami.",
+  description: "Halcom partners with the world's leading technology vendors to provide the best IT Infrastructure solutions to our clients.",
   openGraph: {
     title: "Partner | Halcom",
-    description:
-      "Halcom bermitra dengan vendor teknologi terkemuka dunia untuk solusi IT Infrastructure terbaik.",
+    description: "Halcom partners with the world's leading technology vendors for the best IT Infrastructure solutions.",
   },
 };
 
-export default function PartnerLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PartnerLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

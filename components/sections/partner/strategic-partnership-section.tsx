@@ -7,11 +7,7 @@ export default function StrategicPartnershipSection() {
     <div className="w-full py-16 relative overflow-hidden">
       <div
         aria-hidden="true"
-        className={cn(
-          "-z-10 -top-1/2 -translate-x-1/2 pointer-events-none absolute left-1/2 h-[120vmin] w-[120vmin] rounded-b-full",
-          "bg-[radial-gradient(ellipse_at_center,--theme(--color-foreground/.1),transparent_50%)]",
-          "blur-[30px]",
-        )}
+        className={cn("-z-10 -top-1/2 -translate-x-1/2 pointer-events-none absolute left-1/2 h-[120vmin] w-[120vmin] rounded-b-full", "bg-[radial-gradient(ellipse_at_center,--theme(--color-foreground/.1),transparent_50%)]", "blur-[30px]")}
       />
 
       {/* Header Section */}
@@ -21,12 +17,7 @@ export default function StrategicPartnershipSection() {
           <GradientHeading size="lg" weight="bold">
             Strategic Partnership
           </GradientHeading>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            <span className="font-semibold text-foreground">Halcom</span> has
-            reached various levels of strategic partnership with leading
-            technology principals, reflecting our strong commitment to
-            collaboration and excellence.
-          </p>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">Halcom has reached various levels of strategic partnership with leading technology principals, reflecting our strong commitment to collaboration and excellence.</p>
         </div>
       </section>
 
