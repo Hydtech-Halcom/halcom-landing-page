@@ -29,7 +29,7 @@ export default function Achievements() {
     {
       image: "/assets/achievement/AwardedbyCiscoIndonesia.jpg",
       label: "PT Cisco (2016)",
-      description: "FY16 Rookie Parner of the Year - Cisco Indonesia",
+      description: "FY16 Rookie Partner of the Year - Cisco Indonesia",
     },
     {
       image: "/assets/achievement/AwardedbyPTTechDataAdvanced.jpg",
@@ -37,7 +37,7 @@ export default function Achievements() {
       description: "Top Enterprise Partner - Geo X Partner Award FY21",
     },
     {
-      image: "/assets/achievement/Best of Growth for IT Solution CAwardedPTSynnexMetrodataIndonesia.jpg",
+      image: "/assets/achievement/best-of-growth-for-it-solution-c-awarded-pt-synnex-metrodata-indonesia.jpg",
       label: "Awarded by PT Synnex Metrodata Indonesia (2021)",
       description: "Best of Growth for IT Solutions Award",
     },

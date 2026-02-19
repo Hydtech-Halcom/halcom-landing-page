@@ -32,7 +32,7 @@ export default function Hero() {
 
               <motion.p className="text-base sm:text-xl text-muted-foreground leading-relaxed max-w-2xl">
                 Halcom is a System Integrator providing end-to-end IT infrastructure, mechanical & electrical systems, industrial automation, and audio visual solutions. With over 20 years of experience and certified professionals, we build
-                integrated technology environments that support performance, efficiency, and long-term reliability
+                integrated technology environments that support performance, efficiency, and long-term reliability.
               </motion.p>
             </motion.div>
 

@@ -7,7 +7,7 @@ import { TextAnimate } from "../ui/text-animate";
 const solutions: iCardItem[] = [
   {
     title: "IT Infrastructure",
-    description: "Halcom delivers comprehensive IT infrastructure solutions from assessmentand design to full implementation and integration.",
+    description: "Halcom delivers comprehensive IT infrastructure solutions from assessment and design to full implementation and integration.",
     tag: "Design",
     src: "/assets/why-choose/bank-backed.jpg",
     link: "#contact",
