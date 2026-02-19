@@ -99,14 +99,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`font-sans antialiased`}>
-        <Header />
-        {children}
-        <Analytics />
-        <SmoothScroll />
-        <ScrollToTop />
-        <Chatbot />
-        <Footer />
+      <body className="font-sans antialiased">
+        <div className="relative flex min-h-dvh flex-col">
+          <Header />
+          <div className="flex-1">{children}</div>
+          <Analytics />
+          <SmoothScroll />
+          <ScrollToTop />
+          <Chatbot />
+          <Footer />
+        </div>
       </body>
     </html>
   );
