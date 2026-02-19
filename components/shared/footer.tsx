@@ -8,7 +8,7 @@ import { BRANCH_OFFICES, CONTACT_INFO, NAV_LINKS } from "@/lib/constants/company
 
 export default function Footer() {
   return (
-    <motion.footer className="w-full bg-foreground text-white">
+    <motion.footer className="w-full bg-foreground pb-[env(safe-area-inset-bottom)] text-white">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Logo */}
@@ -51,11 +51,19 @@ export default function Footer() {
 
             <div className="flex gap-3 mb-4">
               {[
-                { icon: Instagram, href: "#" },
-                { icon: Facebook, href: "#" },
-                { icon: Linkedin, href: "#" },
+                { icon: Instagram, href: "https://www.instagram.com/halcom.official/" },
+                { icon: Facebook, href: "https://www.facebook.com/halcom.official/" },
+                { icon: Linkedin, href: "https://www.linkedin.com/company/pt-halcom-integrated-solution/about/" },
               ].map((social, i) => (
-                <motion.a key={i} href={social.href} className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                <motion.a
+                  key={i}
+                  href={social.href}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <social.icon size={18} />
                 </motion.a>
               ))}

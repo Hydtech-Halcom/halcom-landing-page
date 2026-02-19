@@ -44,7 +44,7 @@ export default function AboutCompany() {
               </p>
 
               <p className="text-base sm:text-lg text-foreground-secondary leading-relaxed">
-                Our mission is to empower businesses of all sizes to thrive in our ever-changing marketplace. We are committed to delivering exceptional value through our strategic insights and innovative approaches to IT infrastructure.
+                Our mission is to support businesses with reliable technology and infrastructure solutions. Through strong technical expertise and professional execution,we help our clients operate efficiently and securely.
               </p>
             </motion.div>
 

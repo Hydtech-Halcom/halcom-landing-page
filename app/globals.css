@@ -119,8 +119,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html,
   body {
-    @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    min-height: 100%;
+    background-color: var(--foreground);
+  }
+  body {
+    @apply min-h-dvh overflow-x-hidden bg-background text-foreground;
   }
 }
 
